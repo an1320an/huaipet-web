@@ -1,8 +1,11 @@
 import './App.css'
 import idleFace from '/mascot/idle.webp'
-import happyFace from '/mascot/happy.webp'
-import thinkingFace from '/mascot/thinking.webp'
-import sleepFace from '/mascot/sleep.webp'
+import petGrowthIcon from '/features/feature-pet-growth.webp'
+import aiChatIcon from '/features/feature-ai-chat.webp'
+import examIcon from '/features/feature-exam.webp'
+import forgettingCurveIcon from '/features/feature-forgetting-curve.webp'
+import careerIcon from '/features/feature-career.webp'
+import cloudSyncIcon from '/features/feature-cloud-sync.webp'
 
 const philosophy = [
   {
@@ -24,12 +27,12 @@ const philosophy = [
 ]
 
 const features = [
-  { icon: happyFace, title: '宠物养成', desc: '等级 1-99，成长曲线，学历、打工、商店一应俱全' },
-  { icon: thinkingFace, title: 'AI 陪伴对话', desc: 'DeepSeek 驱动，自动摘取长期记忆，越聊越懂你' },
-  { icon: idleFace, title: '智能考试系统', desc: 'AI 出题、错题本、三种学习模式，专为医学考点设计' },
-  { icon: sleepFace, title: '遗忘曲线复习', desc: '1h→1d→2d→4d→7d→15d→30d，科学安排复习节奏' },
-  { icon: happyFace, title: '职业成长路线', desc: '医学生、医生、护士、药师，等级阈值触发晋升与徽章' },
-  { icon: idleFace, title: '跨端云同步', desc: '桌面、手机、浏览器，数据和聊天记忆随身带走' },
+  { icon: petGrowthIcon, title: '宠物养成', desc: '等级 1-99，成长曲线，学历、打工、商店一应俱全' },
+  { icon: aiChatIcon, title: 'AI 陪伴对话', desc: 'DeepSeek 驱动，自动摘取长期记忆，越聊越懂你' },
+  { icon: examIcon, title: '智能考试系统', desc: 'AI 出题、错题本、三种学习模式，专为医学考点设计' },
+  { icon: forgettingCurveIcon, title: '遗忘曲线复习', desc: '1h→1d→2d→4d→7d→15d→30d，科学安排复习节奏' },
+  { icon: careerIcon, title: '职业成长路线', desc: '医学生、医生、护士、药师，等级阈值触发晋升与徽章' },
+  { icon: cloudSyncIcon, title: '跨端云同步', desc: '桌面、手机、浏览器，数据和聊天记忆随身带走' },
 ]
 
 const roadmap = [
