@@ -143,6 +143,69 @@
   margin-bottom: 12px;
 }
 
+.download,
+.about,
+.faq {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.download-note {
+  font-size: 15px;
+  margin: 8px auto 24px;
+  max-width: 480px;
+}
+
+.platform-card {
+  text-align: center;
+}
+
+.platform-status {
+  display: inline-block;
+  margin-top: 12px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  background: var(--code-bg);
+  border-radius: 999px;
+  padding: 4px 12px;
+}
+
+.about p {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: 16px;
+  line-height: 170%;
+  text-align: left;
+}
+
+.faq-list {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.faq-item {
+  padding: 20px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+}
+
+.faq-item h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.faq-item p {
+  font-size: 15px;
+  line-height: 160%;
+}
+
 .roadmap-columns {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));

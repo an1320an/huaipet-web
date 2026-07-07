@@ -68,6 +68,30 @@ const roadmap = [
   },
 ]
 
+const platforms = [
+  { name: 'Windows 桌面端', desc: '透明置顶桌宠窗口，摸头、喂食、休息', status: '开发中' },
+  { name: 'Android 移动端', desc: '手机浮窗宠物，随身陪伴', status: '开发中' },
+]
+
+const faq = [
+  {
+    q: 'HuaiPet 免费吗？',
+    a: '目前处于开发阶段，暂无定价计划，具体收费模式会在正式上线前公布。',
+  },
+  {
+    q: '支持哪些平台？',
+    a: '目前 Windows 桌面端和 Android 移动端还在开发中，安装包尚未公开发布。关注下方"更新日志"或抖音账号可以第一时间获取上线通知。',
+  },
+  {
+    q: '我的数据安全吗？',
+    a: 'HuaiPet 支持本地/云端双模式：本地模式下数据只保存在你的设备上；云端模式会加密存储在服务器用于跨设备同步。详见隐私政策。',
+  },
+  {
+    q: 'AI 给出的内容能直接当复习资料吗？',
+    a: 'AI 生成的内容（聊天回复、考试题目与解析）仅供学习参考，不能替代正式教材、考试大纲和专业医学判断，详见免责声明。',
+  },
+]
+
 const changelog = [
   {
     date: '2026-07-07',
@@ -90,9 +114,10 @@ function App() {
           <nav>
             <a href="#philosophy">理念</a>
             <a href="#features">功能</a>
+            <a href="#download">下载</a>
+            <a href="#about">关于</a>
             <a href="#roadmap">路线图</a>
             <a href="#changelog">更新日志</a>
-            <a href="#architecture">架构</a>
           </nav>
         </div>
       </header>
@@ -133,6 +158,37 @@ function App() {
           </div>
         </section>
 
+        <section id="download" className="download">
+          <h2 className="section-title">下载</h2>
+          <p className="download-note">桌面端和移动端还在开发中，尚未公开发布安装包。</p>
+          <div className="card-grid">
+            {platforms.map((p) => (
+              <div className="card platform-card" key={p.name}>
+                <h3>{p.name}</h3>
+                <p>{p.desc}</p>
+                <span className="platform-status">{p.status}</span>
+              </div>
+            ))}
+          </div>
+          <p className="download-note">
+            想第一时间知道上线消息？关注
+            <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> 抖音 · 槐序学长 </a>
+            或留意下方更新日志。
+          </p>
+        </section>
+
+        <section id="about" className="about">
+          <h2 className="section-title">关于我们</h2>
+          <p>
+            槐序·HuaiPet 是一个正在开发中的独立项目，目标是做一个真正"陪伴"医学生和医护人员走过整条职业成长路的
+            AI 搭子——不是刷题软件，也不是普通聊天机器人。项目由个人开发者持续迭代打造，你可以在抖音
+            <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> @槐序学长 </a>
+            关注最新进展，或通过邮箱
+            <a href="mailto:an1320an@gmail.com"> an1320an@gmail.com </a>
+            联系我们、提出建议。
+          </p>
+        </section>
+
         <section id="roadmap" className="roadmap">
           <h2 className="section-title">路线图</h2>
           <div className="roadmap-columns">
@@ -166,6 +222,18 @@ function App() {
           </ul>
         </section>
 
+        <section id="faq" className="faq">
+          <h2 className="section-title">常见问题</h2>
+          <div className="faq-list">
+            {faq.map((item) => (
+              <div className="faq-item" key={item.q}>
+                <h3>{item.q}</h3>
+                <p>{item.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section id="architecture" className="architecture">
           <h2 className="section-title">一处陪伴，处处同步</h2>
           <div className="arch-diagram">
@@ -194,8 +262,13 @@ function App() {
           </svg>
           抖音：槐序学长
         </a>
+        <p>
+          联系邮箱：<a href="mailto:an1320an@gmail.com">an1320an@gmail.com</a>
+        </p>
         <p>HuaiPet · 敬请期待</p>
         <nav className="legal-links">
+          <a href="#faq">常见问题</a>
+          <a href="#architecture">架构</a>
           <a href="/legal/privacy.html">隐私政策</a>
           <a href="/legal/terms.html">用户协议</a>
           <a href="/legal/disclaimer.html">免责声明</a>
