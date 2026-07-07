@@ -195,6 +195,11 @@ function App() {
           抖音：槐序学长
         </a>
         <p>HuaiPet · 敬请期待</p>
+        <nav className="legal-links">
+          <a href="/legal/privacy.html">隐私政策</a>
+          <a href="/legal/terms.html">用户协议</a>
+          <a href="/legal/disclaimer.html">免责声明</a>
+        </nav>
       </footer>
     </div>
   )

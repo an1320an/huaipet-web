@@ -297,6 +297,21 @@
   height: 18px;
 }
 
+.legal-links {
+  margin-top: 8px;
+}
+
+.legal-links a {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  margin: 0 8px;
+}
+
+.legal-links a:hover {
+  color: var(--accent);
+}
+
 @media (max-width: 640px) {
   .hero h1 {
     font-size: 32px;
