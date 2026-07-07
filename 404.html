@@ -26,14 +26,31 @@
       .notfound-page p {
         margin-bottom: 32px;
       }
-      .notfound-home {
+      .notfound-actions {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .notfound-home,
+      .notfound-back,
+      .notfound-contact {
         display: inline-block;
         padding: 12px 28px;
         border-radius: 999px;
-        background: var(--accent);
-        color: white;
         text-decoration: none;
         font-weight: 500;
+        border: 1px solid transparent;
+      }
+      .notfound-home {
+        background: var(--accent);
+        color: white;
+      }
+      .notfound-back,
+      .notfound-contact {
+        background: transparent;
+        color: var(--text-h);
+        border-color: var(--border);
       }
     </style>
   </head>
@@ -42,7 +59,11 @@
       <img src="/mascot/sleep.webp" alt="朵朵睡着了" class="notfound-mascot" />
       <h1>朵朵找不到这个页面了</h1>
       <p>你访问的链接可能已经失效，或者页面还没做好。</p>
-      <a class="notfound-home" href="/">回到首页</a>
+      <div class="notfound-actions">
+        <a class="notfound-home" href="/">回到首页</a>
+        <a class="notfound-back" href="#" onclick="history.length > 1 ? history.back() : (location.href = '/'); return false;">返回上一页</a>
+        <a class="notfound-contact" href="mailto:an1320an@gmail.com">联系我们</a>
+      </div>
     </div>
   </body>
 </html>
