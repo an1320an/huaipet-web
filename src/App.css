@@ -1,0 +1,187 @@
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100svh;
+}
+
+.nav {
+  border-bottom: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  z-index: 10;
+}
+
+.nav-inner {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-h);
+}
+
+.nav a {
+  margin-left: 24px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 15px;
+}
+
+.nav a:hover {
+  color: var(--accent);
+}
+
+.hero {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 64px 24px 48px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-mascot {
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin-bottom: 16px;
+}
+
+.hero-sub {
+  font-size: 19px;
+  margin-top: 8px;
+}
+
+.hero-tag {
+  margin-top: 16px;
+  font-family: var(--mono);
+  font-size: 14px;
+  color: var(--accent);
+  background: var(--accent-bg);
+  border: 1px solid var(--accent-border);
+  border-radius: 999px;
+  padding: 6px 16px;
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 32px;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.philosophy,
+.features,
+.architecture {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 56px 24px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  text-align: left;
+}
+
+.card h3 {
+  font-size: 17px;
+  color: var(--text-h);
+  margin: 0 0 8px;
+}
+
+.card p {
+  font-size: 15px;
+  line-height: 150%;
+}
+
+.feature-card {
+  text-align: center;
+}
+
+.feature-icon {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  margin-bottom: 12px;
+}
+
+.architecture {
+  text-align: center;
+}
+
+.arch-diagram {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  align-items: center;
+}
+
+.arch-node {
+  border: 1px solid var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--text-h);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 15px;
+}
+
+.arch-arrow {
+  flex-basis: 100%;
+  font-size: 20px;
+  color: var(--accent);
+}
+
+.arch-backend {
+  margin-top: 16px;
+  display: inline-block;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-family: var(--mono);
+  font-size: 14px;
+}
+
+.arch-note {
+  margin-top: 16px;
+  font-size: 14px;
+}
+
+.footer {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 24px;
+  font-size: 14px;
+}
+
+@media (max-width: 640px) {
+  .hero h1 {
+    font-size: 32px;
+  }
+}
