@@ -1,8 +1,8 @@
 import './App.css'
-import idleFace from '/mascot/idle.png'
-import happyFace from '/mascot/happy.png'
-import thinkingFace from '/mascot/thinking.png'
-import sleepFace from '/mascot/sleep.png'
+import idleFace from '/mascot/idle.webp'
+import happyFace from '/mascot/happy.webp'
+import thinkingFace from '/mascot/thinking.webp'
+import sleepFace from '/mascot/sleep.webp'
 
 const philosophy = [
   {
