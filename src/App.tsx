@@ -176,6 +176,20 @@ function App() {
       </main>
 
       <footer className="footer">
+        <a
+          className="social-link"
+          href="https://v.douyin.com/4vpWBY5MsL0/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <svg viewBox="0 0 24 24" className="social-icon" aria-hidden="true">
+            <path
+              fill="currentColor"
+              d="M16.6 5.82c-.9-.98-1.4-2.26-1.4-3.6h-3.28v13.9a3.16 3.16 0 0 1-5.6 2 3.16 3.16 0 0 1 3.34-5.05v-3.34a6.47 6.47 0 0 0-5.4 10.86 6.47 6.47 0 0 0 11.04-4.58V9.01a8.16 8.16 0 0 0 4.7 1.5V7.24a4.85 4.85 0 0 1-3.4-1.42z"
+            />
+          </svg>
+          抖音：槐序学长
+        </a>
         <p>HuaiPet · 敬请期待</p>
       </footer>
     </div>
