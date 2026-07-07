@@ -125,7 +125,7 @@ function App() {
           <div className="card-grid">
             {features.map((item) => (
               <div className="card feature-card" key={item.title}>
-                <img src={item.icon} alt="" className="feature-icon" />
+                <img src={item.icon} alt="" className="feature-icon" loading="lazy" />
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
