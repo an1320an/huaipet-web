@@ -32,6 +32,51 @@ const features = [
   { icon: idleFace, title: '跨端云同步', desc: '桌面、手机、浏览器，数据和聊天记忆随身带走' },
 ]
 
+const roadmap = [
+  {
+    status: '已完成',
+    items: [
+      '宠物养成系统（等级、成长曲线）',
+      'AI 聊天陪伴（DeepSeek 驱动，自动摘取长期记忆）',
+      '智能考试系统（AI 出题、错题本、三种学习模式）',
+      '遗忘曲线复习（1h→1d→2d→4d→7d→15d→30d）',
+      '职业成长路线（医学生→医生/护士/药师，职称阶梯）',
+      '跨端云同步（桌面、手机、浏览器）',
+    ],
+  },
+  {
+    status: '进行中',
+    items: [
+      '等级制职称身份系统升级',
+      '视觉奖励——等级边框、晋升徽章',
+      '庆祝动画——晋升烟花 + 朵朵祝贺',
+      '陪伴对话系统——学习鼓励、考前安慰、考后共情',
+      '更多职业身份（检验、影像、公卫、口腔、中医……）',
+    ],
+  },
+  {
+    status: '未来方向',
+    items: [
+      '陪伴深化——每日问候、学习总结、考前陪伴、考后反馈',
+      '成长可视化——成长时间线、知识图谱、学习报告',
+      '技术基建——推送通知、离线模式、多语言',
+    ],
+  },
+]
+
+const changelog = [
+  {
+    date: '2026-07-07',
+    title: '官网上线',
+    desc: '槐序·HuaiPet 官网正式上线，huaipet.com 可以访问了。',
+  },
+  {
+    date: '2026-07-06',
+    title: 'v0.1.0',
+    desc: '宠物养成、学历系统、打工系统、商店系统、聊天系统、任务系统、记忆系统、偏好系统、账号系统、云同步、桌面浮窗宠物、手机浮窗宠物、管理员后台、考试系统、三种学习模式、遗忘曲线复习、职业系统全部跑通。',
+  },
+]
+
 function App() {
   return (
     <div className="page">
@@ -41,6 +86,8 @@ function App() {
           <nav>
             <a href="#philosophy">理念</a>
             <a href="#features">功能</a>
+            <a href="#roadmap">路线图</a>
+            <a href="#changelog">更新日志</a>
             <a href="#architecture">架构</a>
           </nav>
         </div>
@@ -80,6 +127,39 @@ function App() {
               </div>
             ))}
           </div>
+        </section>
+
+        <section id="roadmap" className="roadmap">
+          <h2 className="section-title">路线图</h2>
+          <div className="roadmap-columns">
+            {roadmap.map((column) => (
+              <div className="roadmap-column" key={column.status}>
+                <h3 className={`roadmap-status roadmap-status--${column.status === '已完成' ? 'done' : column.status === '进行中' ? 'doing' : 'planned'}`}>
+                  {column.status}
+                </h3>
+                <ul>
+                  {column.items.map((item) => (
+                    <li key={item}>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="changelog" className="changelog">
+          <h2 className="section-title">更新日志</h2>
+          <ul className="changelog-list">
+            {changelog.map((entry) => (
+              <li key={entry.date}>
+                <span className="changelog-date">{entry.date}</span>
+                <div>
+                  <h3>{entry.title}</h3>
+                  <p>{entry.desc}</p>
+                </div>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section id="architecture" className="architecture">
