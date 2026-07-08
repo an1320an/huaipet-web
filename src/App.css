@@ -177,7 +177,9 @@
 
 .philosophy,
 .features,
-.architecture {
+.architecture,
+.roadmap,
+.changelog {
   max-width: 1024px;
   margin: 0 auto;
   padding: 56px 24px;
