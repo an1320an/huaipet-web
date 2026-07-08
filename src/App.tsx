@@ -124,10 +124,10 @@ function App() {
           <nav>
             <a href="#philosophy">理念</a>
             <a href="#features">功能</a>
-            <a href="#download">下载</a>
             <a href="#about">关于</a>
             <a href="#roadmap">路线图</a>
             <a href="#changelog">更新日志</a>
+            <a href="#download" className="nav-cta">下载</a>
           </nav>
         </div>
       </header>
@@ -140,7 +140,10 @@ function App() {
             不是 AI 刷题软件，不是 AI 聊天机器人，是<strong>陪伴式医学学习伴侣</strong>。
           </p>
           <img src={companionBanner} alt="用户与朵朵彼此陪伴" className="hero-companion" />
-          <a className="cta" href="#features">了解更多</a>
+          <div className="hero-cta-group">
+            <a className="cta" href="#download">立即下载 / 参与内测</a>
+            <a className="cta cta-secondary" href="#features">了解更多</a>
+          </div>
         </section>
 
         <section id="philosophy" className="philosophy">
@@ -277,15 +280,22 @@ function App() {
           </svg>
           抖音：槐序学长
         </a>
-        <p className="social-link">
+        <a
+          className="social-link"
+          href="https://wpa.qq.com/msgrd?v=3&uin=2014302010&site=qq&menu=yes"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           <svg viewBox="0 0 24 24" className="social-icon" aria-hidden="true">
             <path
               fill="currentColor"
-              d="M12 2C7.03 2 3.5 5.5 3.5 10.5c0 2.13.8 3.9 1.98 5.24-.1.62-.4 1.6-1.15 2.7a.5.5 0 0 0 .5.77c1.6-.3 2.75-.9 3.4-1.32.9.3 1.9.46 2.77.46 4.97 0 8.5-3.5 8.5-8.5S16.97 2 12 2z"
+              d="M12 2c-3.6 0-6 2.8-6 7.2 0 1.7.3 3.1.8 4.2-1 .5-1.9 1.6-2.4 3.1-.2.5.2.9.7.7.8-.3 1.6-.6 2.2-1 .6 1.2 2.4 2 4.7 2s4.1-.8 4.7-2c.6.4 1.4.7 2.2 1 .5.2.9-.2.7-.7-.5-1.5-1.4-2.6-2.4-3.1.5-1.1.8-2.5.8-4.2C18 4.8 15.6 2 12 2z"
             />
+            <circle cx="9" cy="1.6" r="1.4" fill="currentColor" />
+            <circle cx="15" cy="1.6" r="1.4" fill="currentColor" />
           </svg>
           QQ：2014302010
-        </p>
+        </a>
         <p>
           联系邮箱：<a href="mailto:an1320an@gmail.com">an1320an@gmail.com</a>
         </p>
