@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import idleFace from '/mascot/idle.webp'
+import happyFace from '/mascot/happy.webp'
 import companionBanner from '/hero-companion-banner.webp'
 import petGrowthIcon from '/features/feature-pet-growth.webp'
 import aiChatIcon from '/features/feature-ai-chat.webp'
@@ -398,12 +399,15 @@ function App() {
           <ul className="contributors-list">
             {contributors.map((c) => (
               <li key={c.name} className="reveal">
-                <div className="contributor-header">
-                  <strong>{c.name}</strong>
-                  <span className="contributor-title">{c.title}</span>
+                <img src={happyFace} alt="" className="contributor-avatar" />
+                <div className="contributor-body">
+                  <div className="contributor-header">
+                    <strong>{c.name}</strong>
+                    <span className="contributor-title">{c.title}</span>
+                  </div>
+                  <p className="contributor-role">参与方向：{c.contribution}</p>
+                  <p className="contributor-thanks">{c.thanks}</p>
                 </div>
-                <p className="contributor-role">参与方向：{c.contribution}</p>
-                <p className="contributor-thanks">{c.thanks}</p>
               </li>
             ))}
           </ul>
