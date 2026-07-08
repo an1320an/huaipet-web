@@ -224,15 +224,17 @@ function App() {
 
       <main>
         <section className="hero">
-          <img src={idleFace} alt="朵朵" className="hero-mascot" />
-          <h1>一个会陪着医学人成长的 AI 小伙伴</h1>
-          <p className="hero-sub">
-            不是 AI 刷题软件，不是 AI 聊天机器人，是<strong>陪伴式医学学习伴侣</strong>。
-          </p>
-          <img src={companionBanner} alt="用户与朵朵彼此陪伴" className="hero-companion" />
-          <div className="hero-cta-group">
-            <a className="cta" href="#download">立即下载 / 参与内测</a>
-            <a className="cta cta-secondary" href="#features">了解更多</a>
+          <div className="hero-inner">
+            <img src={idleFace} alt="朵朵" className="hero-mascot" />
+            <h1>一个会陪着医学人成长的 AI 小伙伴</h1>
+            <p className="hero-sub">
+              不是 AI 刷题软件，不是 AI 聊天机器人，是<strong>陪伴式医学学习伴侣</strong>。
+            </p>
+            <img src={companionBanner} alt="用户与朵朵彼此陪伴" className="hero-companion" />
+            <div className="hero-cta-group">
+              <a className="cta" href="#download">立即下载 / 参与内测</a>
+              <a className="cta cta-secondary" href="#features">了解更多</a>
+            </div>
           </div>
         </section>
 
