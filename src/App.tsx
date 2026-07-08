@@ -69,8 +69,13 @@ const roadmap = [
 ]
 
 const platforms = [
-  { name: 'Windows 桌面端', desc: '透明置顶桌宠窗口，摸头、喂食、休息', status: '开发中' },
-  { name: 'Android 移动端', desc: '手机浮窗宠物，随身陪伴', status: '开发中' },
+  { name: 'Windows 桌面端', desc: '透明置顶桌宠窗口，摸头、喂食、休息', status: '开发中', downloadUrl: null },
+  {
+    name: 'Android 移动端',
+    desc: '手机浮窗宠物，随身陪伴',
+    status: '内测招募中',
+    downloadUrl: 'https://github.com/an1320an/huaipet-web/releases/download/android-beta-latest/huaipet-mobile-release.apk',
+  },
 ]
 
 const faq = [
@@ -80,7 +85,7 @@ const faq = [
   },
   {
     q: '支持哪些平台？',
-    a: '目前 Windows 桌面端和 Android 移动端还在开发中，安装包尚未公开发布。关注下方"更新日志"或抖音账号可以第一时间获取上线通知。',
+    a: 'Android 移动端已开启邀请制内测，Windows 桌面端还在开发中。想参与内测的话，通过抖音 @槐序学长 或 QQ 群联系我们获取邀请码。',
   },
   {
     q: '我的数据安全吗？',
@@ -93,6 +98,11 @@ const faq = [
 ]
 
 const changelog = [
+  {
+    date: '2026-07-08',
+    title: 'Android 内测开启',
+    desc: 'HuaiPet Android 移动端正式开启邀请制内测，通过抖音 @槐序学长 联系获取邀请码。',
+  },
   {
     date: '2026-07-07',
     title: '官网上线',
@@ -160,20 +170,25 @@ function App() {
 
         <section id="download" className="download">
           <h2 className="section-title">下载</h2>
-          <p className="download-note">桌面端和移动端还在开发中，尚未公开发布安装包。</p>
+          <p className="download-note">Android 移动端已开启邀请制内测，Windows 桌面端还在开发中。</p>
           <div className="card-grid">
             {platforms.map((p) => (
               <div className="card platform-card" key={p.name}>
                 <h3>{p.name}</h3>
                 <p>{p.desc}</p>
                 <span className="platform-status">{p.status}</span>
+                {p.downloadUrl && (
+                  <a className="platform-download" href={p.downloadUrl}>
+                    下载安装包
+                  </a>
+                )}
               </div>
             ))}
           </div>
           <p className="download-note">
-            想第一时间知道上线消息？关注
+            内测需要邀请码才能注册，通过
             <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> 抖音 · 槐序学长 </a>
-            或留意下方更新日志。
+            联系我们获取邀请码。
           </p>
         </section>
 
