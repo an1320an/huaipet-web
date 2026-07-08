@@ -292,9 +292,13 @@
 }
 
 .cocreate-band {
-  background: linear-gradient(180deg, var(--accent-bg), transparent);
-  border-top: 1px solid var(--accent-border);
-  border-bottom: 1px solid var(--accent-border);
+  background: linear-gradient(
+    180deg,
+    transparent,
+    var(--accent-bg) 15%,
+    var(--accent-bg) 85%,
+    transparent
+  );
 }
 
 .cocreate-intro,
