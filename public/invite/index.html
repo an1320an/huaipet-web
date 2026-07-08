@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>HuaiPet 邀请 · 槐序</title>
+<meta name="description" content="你的朋友邀请你一起用 HuaiPet 槐序备考。" />
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; background: linear-gradient(160deg, #eaf4ee 0%, #f4f8f6 100%); color: #1f2d27; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
+  .card { background: #fff; border-radius: 20px; padding: 32px 24px; max-width: 380px; width: 100%; box-shadow: 0 12px 40px rgba(47,125,97,0.12); text-align: center; }
+  .logo { font-size: 22px; font-weight: 800; color: #2f7d61; }
+  .lead { font-size: 15px; color: #4a5b54; margin-top: 14px; line-height: 1.6; }
+  .code-label { font-size: 12px; color: #899490; margin-top: 24px; letter-spacing: 1px; }
+  .code { font-size: 30px; font-weight: 800; letter-spacing: 3px; color: #1f2d27; margin-top: 6px; background: #f4f8f6; border-radius: 12px; padding: 14px; }
+  .btn { display: block; margin-top: 22px; background: #2f7d61; color: #fff; text-decoration: none; font-weight: 700; font-size: 16px; padding: 14px; border-radius: 12px; }
+  .btn:active { opacity: .85; }
+  .hint { font-size: 12.5px; color: #899490; margin-top: 16px; line-height: 1.6; }
+  .foot { font-size: 11px; color: #b0bdb8; margin-top: 18px; line-height: 1.6; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="logo">🌱 HuaiPet 槐序</div>
+    <p class="lead">你的朋友邀请你一起用 <b>HuaiPet 槐序</b> 备考——一只陪你刷题、陪你聊天的桌宠。</p>
+    <div class="code-label">你的邀请码</div>
+    <div class="code" id="code">—</div>
+    <a class="btn" href="/download/huaipet-mobile-release.apk">下载 App（Android）</a>
+    <p class="hint">下载安装后，在<b>注册页</b>填入上面的邀请码即可完成注册。</p>
+    <p class="foot">邀请码仅用于邀请注册，请勿倒卖。本页面不会收集你的任何个人信息。</p>
+  </div>
+  <script>
+    var code = (new URLSearchParams(location.search).get("code") || "").trim();
+    document.getElementById("code").textContent = code || "（未提供邀请码，请向邀请人索取）";
+    document.title = code ? ("邀请码 " + code + " · HuaiPet") : document.title;
+  </script>
+</body>
+</html>
