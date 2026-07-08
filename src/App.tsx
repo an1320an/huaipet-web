@@ -215,7 +215,7 @@ function App() {
             <a href="#features">功能</a>
             <a href="#about">关于</a>
             <a href="#cocreate">共创</a>
-            <a href="#roadmap">路线图</a>
+            <a href="#roadmap">成长路线图</a>
             <a href="#changelog">更新日志</a>
             <a href="#download" className="nav-cta">下载</a>
           </nav>
@@ -338,7 +338,7 @@ function App() {
         </section>
 
         <section id="roadmap" className="roadmap">
-          <h2 className="section-title reveal">路线图</h2>
+          <h2 className="section-title reveal">成长路线图</h2>
           <div className="roadmap-columns">
             {roadmap.map((column) => (
               <div className="roadmap-column reveal" key={column.status}>
