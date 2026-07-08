@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import idleFace from '/mascot/idle.webp'
 import companionBanner from '/hero-companion-banner.webp'
@@ -161,9 +161,48 @@ const changelog = [
   },
 ]
 
+function useScrollReveal() {
+  useEffect(() => {
+    const els = document.querySelectorAll('.reveal')
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      els.forEach((el) => el.classList.add('is-visible'))
+      return
+    }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        })
+      },
+      { threshold: 0.15 }
+    )
+    els.forEach((el) => observer.observe(el))
+    return () => observer.disconnect()
+  }, [])
+}
+
+function handleCardTilt(e: React.MouseEvent<HTMLDivElement>) {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return
+  const card = e.currentTarget
+  const rect = card.getBoundingClientRect()
+  const x = e.clientX - rect.left
+  const y = e.clientY - rect.top
+  const rotateX = ((y / rect.height) - 0.5) * -8
+  const rotateY = ((x / rect.width) - 0.5) * 8
+  card.style.transform = `perspective(600px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-4px)`
+}
+
+function resetCardTilt(e: React.MouseEvent<HTMLDivElement>) {
+  e.currentTarget.style.transform = ''
+}
+
 function App() {
   const [platform] = useState(detectPlatform)
   const platformNotice = platformNotices[platform]
+  useScrollReveal()
 
   return (
     <div className="page">
@@ -197,10 +236,10 @@ function App() {
         </section>
 
         <section id="philosophy" className="philosophy">
-          <h2 className="section-title">产品哲学</h2>
+          <h2 className="section-title reveal">产品哲学</h2>
           <div className="card-grid">
             {philosophy.map((item) => (
-              <div className="card" key={item.title}>
+              <div className="card reveal" key={item.title}>
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
               </div>
@@ -209,10 +248,15 @@ function App() {
         </section>
 
         <section id="features" className="features">
-          <h2 className="section-title">功能亮点</h2>
+          <h2 className="section-title reveal">功能亮点</h2>
           <div className="card-grid">
             {features.map((item) => (
-              <div className="card feature-card" key={item.title}>
+              <div
+                className="card feature-card reveal"
+                key={item.title}
+                onMouseMove={handleCardTilt}
+                onMouseLeave={resetCardTilt}
+              >
                 <img src={item.icon} alt="" className="feature-icon" loading="lazy" />
                 <h3>{item.title}</h3>
                 <p>{item.desc}</p>
@@ -222,12 +266,12 @@ function App() {
         </section>
 
         <section id="download" className="download">
-          <h2 className="section-title">下载</h2>
+          <h2 className="section-title reveal">下载</h2>
           <p className="download-note">Android 移动端已开启邀请制内测，Windows 桌面端还在开发中。</p>
           {platformNotice && <p className="download-platform-notice">{platformNotice}</p>}
           <div className="card-grid">
             {platforms.map((p) => (
-              <div className="card platform-card" key={p.name}>
+              <div className="card platform-card reveal" key={p.name}>
                 <h3>{p.name}</h3>
                 <p>{p.desc}</p>
                 <span className="platform-status">{p.status}</span>
@@ -253,8 +297,8 @@ function App() {
         </section>
 
         <section id="about" className="about">
-          <h2 className="section-title">关于我们</h2>
-          <p>
+          <h2 className="section-title reveal">关于我们</h2>
+          <p className="reveal">
             槐序·HuaiPet 是一个正在开发中的独立项目，目标是做一个真正"陪伴"医学生和医护人员走过整条职业成长路的
             AI 搭子——不是刷题软件，也不是普通聊天机器人。项目由个人开发者持续迭代打造，你可以在抖音
             <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> @槐序学长 </a>
@@ -266,14 +310,14 @@ function App() {
 
         <section id="cocreate" className="cocreate-band">
           <div className="cocreate">
-            <h2 className="section-title">招募共创</h2>
+            <h2 className="section-title reveal">招募共创</h2>
             <p className="cocreate-intro">
               槐序·HuaiPet 目前是一个人在做的独立项目，还没有任何收入——这不是一份工作，是一次"为爱发电"的邀请。
               如果你也觉得"医学生需要一个真正陪着自己走完整条路的 AI 搭子"这件事值得做，欢迎一起加入，把它做出来。
             </p>
             <div className="card-grid">
               {cocreateRoles.map((role) => (
-                <div className="card cocreate-card" key={role.title}>
+                <div className="card cocreate-card reveal" key={role.title}>
                   <h3>{role.title}</h3>
                   <p>{role.desc}</p>
                 </div>
@@ -293,10 +337,10 @@ function App() {
         </section>
 
         <section id="roadmap" className="roadmap">
-          <h2 className="section-title">路线图</h2>
+          <h2 className="section-title reveal">路线图</h2>
           <div className="roadmap-columns">
             {roadmap.map((column) => (
-              <div className="roadmap-column" key={column.status}>
+              <div className="roadmap-column reveal" key={column.status}>
                 <h3 className={`roadmap-status roadmap-status--${column.status === '已完成' ? 'done' : column.status === '进行中' ? 'doing' : 'planned'}`}>
                   {column.status}
                 </h3>
@@ -311,10 +355,10 @@ function App() {
         </section>
 
         <section id="changelog" className="changelog">
-          <h2 className="section-title">更新日志</h2>
+          <h2 className="section-title reveal">更新日志</h2>
           <ul className="changelog-list">
             {changelog.map((entry) => (
-              <li key={entry.date}>
+              <li key={entry.date} className="reveal">
                 <span className="changelog-date">{entry.date}</span>
                 <div>
                   <h3>{entry.title}</h3>
@@ -326,10 +370,10 @@ function App() {
         </section>
 
         <section id="faq" className="faq">
-          <h2 className="section-title">常见问题</h2>
+          <h2 className="section-title reveal">常见问题</h2>
           <div className="faq-list">
             {faq.map((item) => (
-              <div className="faq-item" key={item.q}>
+              <div className="faq-item reveal" key={item.q}>
                 <h3>{item.q}</h3>
                 <p>{item.a}</p>
               </div>
@@ -338,8 +382,8 @@ function App() {
         </section>
 
         <section id="architecture" className="architecture">
-          <h2 className="section-title">一处陪伴，处处同步</h2>
-          <div className="arch-diagram">
+          <h2 className="section-title reveal">一处陪伴，处处同步</h2>
+          <div className="arch-diagram reveal">
             <div className="arch-node">手机端</div>
             <div className="arch-node">电脑端</div>
             <div className="arch-node">浏览器</div>
@@ -353,7 +397,7 @@ function App() {
           <h2 className="section-title-small">共创成员</h2>
           <ul className="contributors-list">
             {contributors.map((c) => (
-              <li key={c.name}>
+              <li key={c.name} className="reveal">
                 <div className="contributor-header">
                   <strong>{c.name}</strong>
                   <span className="contributor-title">{c.title}</span>
