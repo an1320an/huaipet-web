@@ -8,6 +8,7 @@ import examIcon from '/features/feature-exam.webp'
 import forgettingCurveIcon from '/features/feature-forgetting-curve.webp'
 import careerIcon from '/features/feature-career.webp'
 import cloudSyncIcon from '/features/feature-cloud-sync.webp'
+import androidQrCode from '/qr-android-download.svg'
 
 const philosophy = [
   {
@@ -91,6 +92,7 @@ const platforms = [
     desc: '手机浮窗宠物，随身陪伴',
     status: '内测招募中',
     downloadUrl: 'https://huaipet.com/download/huaipet-mobile-release.apk',
+    qrCode: androidQrCode,
   },
 ]
 
@@ -204,6 +206,12 @@ function App() {
                   <a className="platform-download" href={p.downloadUrl}>
                     下载安装包
                   </a>
+                )}
+                {p.qrCode && (
+                  <div className="platform-qr">
+                    <img src={p.qrCode} alt={`扫码下载 ${p.name}`} />
+                    <span>扫码下载</span>
+                  </div>
                 )}
               </div>
             ))}
