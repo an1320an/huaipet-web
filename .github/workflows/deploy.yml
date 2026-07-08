@@ -1,11 +1,8 @@
-name: Deploy to GitHub Pages
+name: Deploy to HK server
 
 on:
   push:
     branches: [main]
-
-permissions:
-  contents: write
 
 jobs:
   build-and-deploy:
@@ -20,7 +17,11 @@ jobs:
       - run: npm ci
       - run: npm run build
 
-      - uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+      - name: Deploy dist to server
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "${{ secrets.DEPLOY_SSH_KEY }}" > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          rsync -avz --delete --exclude='download' \
+            -e "ssh -i ~/.ssh/deploy_key -p 22 -o StrictHostKeyChecking=accept-new" \
+            ./dist/ ubuntu@43.161.234.56:/var/www/huaipet-web/
