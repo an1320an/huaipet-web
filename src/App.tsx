@@ -115,6 +115,15 @@ const cocreateRoles = [
   },
 ]
 
+const contributors = [
+  {
+    name: '小潘潘',
+    title: 'HuaiPet 第一批共创成员',
+    contribution: '宣传协助、内测反馈',
+    thanks: '感谢小潘潘在 HuaiPet 早期内测阶段参与共创，协助宣传、反馈体验，并和我们一起打磨这个陪伴医学人成长的 AI 学习搭子。',
+  },
+]
+
 const faq = [
   {
     q: 'HuaiPet 免费吗？',
@@ -255,6 +264,34 @@ function App() {
           </p>
         </section>
 
+        <section id="cocreate" className="cocreate-band">
+          <div className="cocreate">
+            <h2 className="section-title">招募共创</h2>
+            <p className="cocreate-intro">
+              槐序·HuaiPet 目前是一个人在做的独立项目，还没有任何收入——这不是一份工作，是一次"为爱发电"的邀请。
+              如果你也觉得"医学生需要一个真正陪着自己走完整条路的 AI 搭子"这件事值得做，欢迎一起加入，把它做出来。
+            </p>
+            <div className="card-grid">
+              {cocreateRoles.map((role) => (
+                <div className="card cocreate-card" key={role.title}>
+                  <h3>{role.title}</h3>
+                  <p>{role.desc}</p>
+                </div>
+              ))}
+            </div>
+            <p className="cocreate-offer">
+              我们没法开工资，但可以：把你的名字放进网站"共创伙伴"名单里；让你的作品变成产品里活生生的一部分——皮肤真的会有人穿，内容真的会有人学；新功能你能第一个看到、第一个玩到。
+            </p>
+            <p className="cocreate-contact">
+              有兴趣的话，通过
+              <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> 抖音 · 槐序学长 </a>
+              、QQ 2014302010 或
+              <a href="mailto:an1320an@gmail.com"> 邮箱 </a>
+              找我们聊聊。
+            </p>
+          </div>
+        </section>
+
         <section id="roadmap" className="roadmap">
           <h2 className="section-title">路线图</h2>
           <div className="roadmap-columns">
@@ -312,29 +349,22 @@ function App() {
           <p className="arch-note">所有数据变更、所有 AI 调用、所有业务逻辑，统一经过后端。</p>
         </section>
 
-        <section id="cocreate" className="cocreate">
-          <h2 className="section-title">招募共创</h2>
-          <p className="cocreate-intro">
-            槐序·HuaiPet 目前是一个人在做的独立项目，还没有任何收入——这不是一份工作，是一次"为爱发电"的邀请。
-            如果你也觉得"医学生需要一个真正陪着自己走完整条路的 AI 搭子"这件事值得做，欢迎一起加入，把它做出来。
-          </p>
-          <div className="card-grid">
-            {cocreateRoles.map((role) => (
-              <div className="card" key={role.title}>
-                <h3>{role.title}</h3>
-                <p>{role.desc}</p>
-              </div>
+        <section id="contributors" className="contributors">
+          <h2 className="section-title-small">共创成员</h2>
+          <ul className="contributors-list">
+            {contributors.map((c) => (
+              <li key={c.name}>
+                <div className="contributor-header">
+                  <strong>{c.name}</strong>
+                  <span className="contributor-title">{c.title}</span>
+                </div>
+                <p className="contributor-role">参与方向：{c.contribution}</p>
+                <p className="contributor-thanks">{c.thanks}</p>
+              </li>
             ))}
-          </div>
-          <p className="cocreate-offer">
-            我们没法开工资，但可以：把你的名字放进网站"共创伙伴"名单里；让你的作品变成产品里活生生的一部分——皮肤真的会有人穿，内容真的会有人学；新功能你能第一个看到、第一个玩到。
-          </p>
-          <p className="cocreate-contact">
-            有兴趣的话，通过
-            <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> 抖音 · 槐序学长 </a>
-            、QQ 2014302010 或
-            <a href="mailto:an1320an@gmail.com"> 邮箱 </a>
-            找我们聊聊。
+          </ul>
+          <p className="contributors-disclaimer">
+            共创成员名单仅用于感谢早期参与者，不代表股权、雇佣、商业代理或官方授权关系。
           </p>
         </section>
       </main>
