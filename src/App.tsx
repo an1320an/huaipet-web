@@ -74,7 +74,7 @@ const platforms = [
     name: 'Android 移动端',
     desc: '手机浮窗宠物，随身陪伴',
     status: '内测招募中',
-    downloadUrl: 'https://github.com/an1320an/huaipet-web/releases/download/android-beta-latest/huaipet-mobile-release.apk',
+    downloadUrl: 'https://huaipet.com/download/huaipet-mobile-release.apk',
   },
 ]
 
