@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './App.css'
 import idleFace from '/mascot/idle.webp'
 import companionBanner from '/hero-companion-banner.webp'
@@ -68,6 +69,21 @@ const roadmap = [
   },
 ]
 
+function detectPlatform() {
+  if (typeof navigator === 'undefined') return 'unknown'
+  const ua = navigator.userAgent
+  if (/HarmonyOS/i.test(ua)) return 'harmonyos'
+  if (/Android/i.test(ua)) return 'android'
+  if (/iPhone|iPad|iPod/i.test(ua)) return 'ios'
+  if (/Macintosh/i.test(ua) && navigator.maxTouchPoints > 1) return 'ios'
+  return 'other'
+}
+
+const platformNotices: Record<string, string> = {
+  ios: '检测到你可能在用 iOS/iPadOS 设备——HuaiPet 目前只支持 Android，iOS 版本还在开发中，敬请期待。',
+  harmonyos: '检测到你可能在用鸿蒙系统——HuaiPet 目前只支持 Android，鸿蒙原生版本我们还在评估适配方案。',
+}
+
 const platforms = [
   { name: 'Windows 桌面端', desc: '透明置顶桌宠窗口，摸头、喂食、休息', status: '开发中', downloadUrl: null },
   {
@@ -116,6 +132,9 @@ const changelog = [
 ]
 
 function App() {
+  const [platform] = useState(detectPlatform)
+  const platformNotice = platformNotices[platform]
+
   return (
     <div className="page">
       <header className="nav">
@@ -174,6 +193,7 @@ function App() {
         <section id="download" className="download">
           <h2 className="section-title">下载</h2>
           <p className="download-note">Android 移动端已开启邀请制内测，Windows 桌面端还在开发中。</p>
+          {platformNotice && <p className="download-platform-notice">{platformNotice}</p>}
           <div className="card-grid">
             {platforms.map((p) => (
               <div className="card platform-card" key={p.name}>
