@@ -289,6 +289,9 @@ function App() {
                     <span>扫码下载</span>
                   </div>
                 )}
+                {!p.downloadUrl && (
+                  <div className="platform-placeholder">敬请期待</div>
+                )}
               </div>
             ))}
           </div>
