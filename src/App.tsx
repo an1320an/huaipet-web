@@ -87,7 +87,7 @@ const platformNotices: Record<string, string> = {
 }
 
 const platforms = [
-  { name: 'Windows 桌面端', desc: '透明置顶桌宠窗口，摸头、喂食、休息', status: '开发中', downloadUrl: null },
+  { name: 'Windows 桌面端', desc: '透明置顶桌面悬浮窗，陪你学习、互动、休息', status: '开发中', downloadUrl: null },
   {
     name: 'Android 移动端',
     desc: '手机浮窗宠物，随身陪伴',
