@@ -17,7 +17,7 @@ const philosophy = [
     desc: '每一个功能都应该让用户感觉"朵朵在陪我"，而不是"我在使用一个工具"。',
   },
   {
-    title: '游戏化 ≠ 功利化',
+    title: '轻养成 ≠ 功利化',
     desc: '等级、称号、徽章是成长的回馈，不是 KPI。',
   },
   {
@@ -31,7 +31,7 @@ const philosophy = [
 ]
 
 const features = [
-  { icon: petGrowthIcon, title: '宠物养成', desc: '等级 1-99，成长曲线，学历、打工、商店一应俱全' },
+  { icon: petGrowthIcon, title: '虚拟伙伴养成', desc: '等级 1-99，成长曲线，学历、打工、商店一应俱全（应用内金币，不可充值）' },
   { icon: aiChatIcon, title: 'AI 陪伴对话', desc: 'DeepSeek 驱动，自动摘取长期记忆，越聊越懂你' },
   { icon: examIcon, title: '智能考试系统', desc: 'AI 出题、错题本、三种学习模式，专为医学考点设计' },
   { icon: forgettingCurveIcon, title: '遗忘曲线复习', desc: '1h→1d→2d→4d→7d→15d→30d，科学安排复习节奏' },
@@ -43,7 +43,7 @@ const roadmap = [
   {
     status: '已完成',
     items: [
-      '宠物养成系统（等级、成长曲线）',
+      '虚拟伙伴养成系统（等级、成长曲线）',
       'AI 聊天陪伴（DeepSeek 驱动，自动摘取长期记忆）',
       '智能考试系统（AI 出题、错题本、三种学习模式）',
       '遗忘曲线复习（1h→1d→2d→4d→7d→15d→30d）',
@@ -100,7 +100,7 @@ const platforms = [
 const cocreateRoles = [
   {
     title: '剪辑 / 视频创作',
-    desc: '槐序·HuaiPet 的抖音开发日记需要人帮忙剪素材、把开发过程做成好看的内容，一起把这个项目的故事讲给更多人听。',
+    desc: '槐序 HuaiPet 的抖音开发日记需要人帮忙剪素材、把开发过程做成好看的内容，一起把这个项目的故事讲给更多人听。',
   },
   {
     title: '插画 / 角色设计',
@@ -153,12 +153,12 @@ const changelog = [
   {
     date: '2026-07-07',
     title: '官网上线',
-    desc: '槐序·HuaiPet 官网正式上线，huaipet.com 可以访问了。',
+    desc: '槐序 HuaiPet 官网正式上线，huaipet.com 可以访问了。',
   },
   {
     date: '2026-07-06',
     title: 'v0.1.0',
-    desc: '宠物养成、学历系统、打工系统、商店系统、聊天系统、任务系统、记忆系统、偏好系统、账号系统、云同步、桌面浮窗宠物、手机浮窗宠物、管理员后台、考试系统、三种学习模式、遗忘曲线复习、职业系统全部跑通。',
+    desc: '虚拟伙伴养成、学历系统、打工系统、商店系统、聊天系统、任务系统、记忆系统、偏好系统、账号系统、云同步、桌面浮窗宠物、手机浮窗宠物、管理员后台、考试系统、三种学习模式、遗忘曲线复习、职业系统全部跑通。',
   },
 ]
 
@@ -209,7 +209,7 @@ function App() {
     <div className="page">
       <header className="nav">
         <div className="nav-inner">
-          <span className="brand">槐序 · HuaiPet</span>
+          <span className="brand">槐序 HuaiPet</span>
           <nav>
             <a href="#philosophy">理念</a>
             <a href="#features">功能</a>
@@ -305,7 +305,7 @@ function App() {
         <section id="about" className="about">
           <h2 className="section-title reveal">关于我们</h2>
           <p className="reveal">
-            槐序·HuaiPet 是一个正在开发中的独立项目，目标是做一个真正"陪伴"医学生和医护人员走过整条职业成长路的
+            槐序 HuaiPet 是一个正在开发中的独立项目，目标是做一个真正"陪伴"医学生和医护人员走过整条职业成长路的
             AI 搭子——不是刷题软件，也不是普通聊天机器人。项目由个人开发者持续迭代打造，你可以在抖音
             <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> @槐序学长 </a>
             关注最新进展，或通过邮箱
@@ -318,7 +318,7 @@ function App() {
           <div className="cocreate">
             <h2 className="section-title reveal">招募共创</h2>
             <p className="cocreate-intro">
-              槐序·HuaiPet 目前是一个人在做的独立项目，还没有任何收入——这不是一份工作，是一次"为爱发电"的邀请。
+              槐序 HuaiPet 目前是一个人在做的独立项目，还没有任何收入——这不是一份工作，是一次"为爱发电"的邀请。
               如果你也觉得"医学生需要一个真正陪着自己走完整条路的 AI 搭子"这件事值得做，欢迎一起加入，把它做出来。
             </p>
             <div className="card-grid">
@@ -454,7 +454,7 @@ function App() {
         <p>
           联系邮箱：<a href="mailto:an1320an@gmail.com">an1320an@gmail.com</a>
         </p>
-        <p>HuaiPet · 敬请期待</p>
+        <p>槐序 HuaiPet · 敬请期待</p>
         <nav className="legal-links">
           <a href="#faq">常见问题</a>
           <a href="#architecture">架构</a>
