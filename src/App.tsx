@@ -11,32 +11,37 @@ import careerIcon from '/features/feature-career.webp'
 import cloudSyncIcon from '/features/feature-cloud-sync.webp'
 import androidQrCode from '/qr-android-download.svg'
 
+// 合规改造 2026-07-15：原来这四条把"让用户感觉朵朵在陪我，而不是在用一个工具"当卖点，
+// 那是把"模糊人机边界、培养情感依赖"写成产品纲领对外宣传，直接撞《人工智能拟人化互动
+// 服务管理暂行办法》第八条（不得诱导情感依赖）与第十八条（须显著标识非真人）；
+// 另一条"共情比准确更重要"对一个医学考试产品更是致命——它和 App 里刚上线的医疗拒答
+// 红线自相矛盾。重写为：学习效果优先、准确优先，陪伴是手段不是目的。
 const philosophy = [
   {
-    title: '陪伴 > 功能',
-    desc: '每一个功能都应该让用户感觉"朵朵在陪我"，而不是"我在使用一个工具"。',
+    title: '学习效果 > 停留时长',
+    desc: '每个功能都要落到"今天多记住了什么"，而不是让你在 App 里多待一会儿。',
   },
   {
     title: '轻养成 ≠ 功利化',
-    desc: '等级、称号、徽章是成长的回馈，不是 KPI。',
+    desc: '等级、称号、徽章是学习进度的回馈，不是 KPI，也不是让你舍不得走的筹码。',
   },
   {
-    title: '温度 > 效率',
-    desc: '鼓励比效率更重要，共情比准确更重要。',
+    title: '准确 > 煽情',
+    desc: '医学内容以准确为第一位。鼓励只是润滑剂，绝不以牺牲准确性为代价；朵朵不做个人诊断和用药建议。',
   },
   {
-    title: '漫漫医学路，朵朵一直在',
-    desc: '产品的时间尺度是"几年"，不是"几天"。',
+    title: '漫漫医学路，工具要经得起用',
+    desc: '产品的时间尺度是"几年"不是"几天"——我们优化的是你的长期学习曲线，不是你的在线时长。',
   },
 ]
 
 const features = [
-  { icon: petGrowthIcon, title: '虚拟伙伴养成', desc: '等级 1-99，成长曲线，学历、打工、商店一应俱全（应用内金币，不可充值）' },
-  { icon: aiChatIcon, title: 'AI 陪伴对话', desc: 'DeepSeek 驱动，自动摘取长期记忆，越聊越懂你' },
+  { icon: petGrowthIcon, title: '轻量养成激励', desc: '等级 1-99，成长曲线，学历、打工、商店一应俱全。金币只能通过学习获得，不支持任何形式的付费购买' },
+  { icon: aiChatIcon, title: 'AI 学习对话', desc: 'DeepSeek 驱动，能记住你的学习进度与薄弱点（AI 生成内容，仅供学习参考）' },
   { icon: examIcon, title: '智能考试系统', desc: 'AI 出题、错题本、三种学习模式，专为医学考点设计' },
   { icon: forgettingCurveIcon, title: '遗忘曲线复习', desc: '1h→1d→2d→4d→7d→15d→30d，科学安排复习节奏' },
   { icon: careerIcon, title: '职业成长路线', desc: '医学生、医生、护士、药师，等级阈值触发晋升与徽章' },
-  { icon: cloudSyncIcon, title: '跨端云同步', desc: '桌面、手机、浏览器，数据和聊天记忆随身带走' },
+  { icon: cloudSyncIcon, title: '云端数据同步', desc: '账号、学习记录与聊天记忆存在云端，换设备也不丢（当前提供 Android 客户端）' },
 ]
 
 const roadmap = [
@@ -48,7 +53,8 @@ const roadmap = [
       '智能考试系统（AI 出题、错题本、三种学习模式）',
       '遗忘曲线复习（1h→1d→2d→4d→7d→15d→30d）',
       '职业成长路线（医学生→医生/护士/药师，职称阶梯）',
-      '跨端云同步（桌面、手机、浏览器）',
+      '云端账号与数据同步（当前提供 Android 客户端）',
+      '合规与健康使用保护（18+ 门槛、AI 显著标识、使用时长提醒、危机干预、数据导出与删除）',
     ],
   },
   {
@@ -90,7 +96,7 @@ const platforms = [
   { name: 'Windows 桌面端', desc: '透明置顶桌面悬浮窗，陪你学习、互动、休息', status: '开发中', downloadUrl: null },
   {
     name: 'Android 移动端',
-    desc: '手机浮窗宠物，随身陪伴',
+    desc: '手机端学习搭子，随时复习',
     status: '内测招募中',
     downloadUrl: 'https://huaipet.com/download/huaipet-mobile-release.apk',
     qrCode: androidQrCode,
@@ -127,24 +133,41 @@ const contributors = [
 
 const faq = [
   {
+    q: '有年龄限制吗？',
+    a: '有。本服务包含 AI 拟人化陪伴功能，按《人工智能拟人化互动服务管理暂行办法》仅面向年满 18 周岁的用户。注册时需填写出生年月用于年龄核验；已注册的老用户在新版客户端中也需要补填。',
+  },
+  {
     q: 'HuaiPet 免费吗？',
-    a: '目前处于开发阶段，暂无定价计划，具体收费模式会在正式上线前公布。',
+    a: '目前免费，且不提供任何付费购买功能——App 内的金币只能通过学习、答题、完成任务获得，不能用真实货币购买。如果未来提供自愿支持类功能，我们会另行明确告知，并且不会以"增进与朵朵的情感关系"作为付费卖点。',
   },
   {
     q: '支持哪些平台？',
-    a: 'Android 移动端已开启邀请制内测，Windows 桌面端还在开发中。想参与内测的话，通过抖音 @槐序学长 或 QQ 2014302010 联系我们获取邀请码。',
+    a: 'Android 移动端已开启邀请制内测。想参与内测的话，通过抖音 @槐序学长 或 QQ 2014302010 联系我们获取邀请码。',
   },
   {
-    q: '我的数据安全吗？',
-    a: 'HuaiPet 支持本地/云端双模式：本地模式下数据只保存在你的设备上；云端模式会加密存储在服务器用于跨设备同步。详见隐私政策。',
+    q: '我的数据存在哪里？会交给第三方吗？',
+    a: '账号、学习记录与聊天内容保存在我们的服务器上，服务器目前位于中国香港，属于个人信息出境；聊天内容会发送给第三方大模型服务商 DeepSeek（深度求索）用于生成回复。注册时我们会就这两件事分别向你单独征求同意，你也可以随时在设置页撤回 AI 数据授权（撤回后 AI 功能停用，其它功能仍可使用）。我们计划把服务器迁回中国内地。详见隐私政策。',
+  },
+  {
+    q: '我能导出或删除我的数据吗？',
+    a: '可以。App 内「设置 → 导出我的数据」可随时下载你的数据副本；你也可以随时注销账号，注销后我们会级联删除你的全部个人数据。',
   },
   {
     q: 'AI 给出的内容能直接当复习资料吗？',
-    a: 'AI 生成的内容（聊天回复、考试题目与解析）仅供学习参考，不能替代正式教材、考试大纲和专业医学判断，详见免责声明。',
+    a: '不能作为最终依据。AI 生成的内容（聊天回复、考试题目与解析）仅供学习参考，不能替代正式教材、考试大纲和专业医学判断，更不能作为医疗、诊断、用药的依据。详见免责声明。',
+  },
+  {
+    q: '朵朵是真人吗？我可以把它当心理咨询用吗？',
+    a: '朵朵是 AI 程序，不是真人，也不具备任何医疗或心理咨询资质，不能替代专业帮助。如果你正处在情绪困境中，请联系全国统一心理援助热线 12356；如遇紧急情况请拨打 110 或 120。',
   },
 ]
 
 const changelog = [
+  {
+    date: '2026-07-15',
+    title: '合规更新：18+ 门槛、AI 标识与健康使用保护',
+    desc: '依据《人工智能拟人化互动服务管理暂行办法》（2026-07-15 施行）：本服务仅面向年满 18 周岁用户，注册需提供出生年月（已注册的老用户在新版 App 中需补填，不补填将无法继续使用）；朵朵在首页与聊天页常驻「AI 程序，不是真人」标识；新增连续使用满 2 小时提醒与过度依赖提示；对涉及自伤、自杀的表述提供即时求助热线（12356）并由人工跟进；新增「导出我的数据」；上线《投诉举报》页并承诺受理时限。',
+  },
   {
     date: '2026-07-08',
     title: 'Android 内测开启',
@@ -225,12 +248,16 @@ function App() {
       <main>
         <section className="hero">
           <div className="hero-inner">
-            <img src={idleFace} alt="朵朵" className="hero-mascot" />
-            <h1>一个会陪着医学人成长的 AI 小伙伴</h1>
+            <img src={idleFace} alt="AI 学习搭子朵朵" className="hero-mascot" />
+            <h1>给医学人的 AI 学习搭子</h1>
             <p className="hero-sub">
-              不是 AI 刷题软件，不是 AI 聊天机器人，是<strong>陪伴式医学学习伴侣</strong>。
+              把 <strong>AI 出题、错题复盘、遗忘曲线复习</strong> 和轻量养成激励做在一起的医学学习工具。
             </p>
-            <img src={companionBanner} alt="用户与朵朵彼此陪伴" className="hero-companion" />
+            {/* 第十八条：必须显著标识"非真人"。官网是拉新的第一触点，App 里有而官网没有是说不过去的。 */}
+            <p className="ai-notice">
+              🤖 朵朵是 AI 程序，不是真人。AI 生成内容仅供学习参考，不能替代教材与专业医学判断。本服务仅面向年满 18 周岁的用户。
+            </p>
+            <img src={companionBanner} alt="朵朵陪你复习医学知识点" className="hero-companion" />
             <div className="hero-cta-group">
               <a className="cta" href="#download">立即下载 / 参与内测</a>
               <a className="cta cta-secondary" href="#features">了解更多</a>
@@ -455,12 +482,20 @@ function App() {
           联系邮箱：<a href="mailto:an1320an@gmail.com">an1320an@gmail.com</a>
         </p>
         <p>槐序 HuaiPet · 敬请期待</p>
+        <p className="ai-notice-footer">
+          🤖 朵朵是 AI 程序，不是真人。本站与 App 内的 AI 生成内容仅供学习参考，不构成医疗建议。
+        </p>
+        <p className="ai-notice-footer">
+          如果你正处在情绪困境中，请联系全国统一心理援助热线{' '}
+          <a href="tel:12356">12356</a>；紧急情况请拨打 <a href="tel:110">110</a> 或 <a href="tel:120">120</a>。
+        </p>
         <nav className="legal-links">
           <a href="#faq">常见问题</a>
           <a href="#architecture">架构</a>
           <a href="/legal/privacy.html">隐私政策</a>
           <a href="/legal/terms.html">用户协议</a>
           <a href="/legal/disclaimer.html">免责声明</a>
+          <a href="/legal/complaints.html">投诉举报</a>
         </nav>
       </footer>
     </div>
