@@ -94,14 +94,15 @@ const platformNotices: Record<string, string> = {
 }
 
 const platforms = [
-  { name: 'Windows 桌面端', desc: '透明置顶桌面悬浮窗，学习提醒与轻量互动', status: '暂缓开发', downloadUrl: null },
   {
     name: 'Android 移动端',
     desc: '手机端学习搭子，随时复习',
-    status: '内测招募中',
+    status: '内测中 · 已开放注册',
     downloadUrl: 'https://huaipet.com/download/huaipet-mobile-release.apk',
     qrCode: androidQrCode,
   },
+  { name: '微信小程序', desc: '随手打开、无需下载（正在评估）', status: '评估中', downloadUrl: null },
+  { name: 'Windows 桌面端', desc: '透明置顶桌面悬浮窗，学习提醒与轻量互动', status: '暂缓开发', downloadUrl: null },
 ]
 
 const cocreateRoles = [
@@ -303,7 +304,7 @@ function App() {
 
         <section id="download" className="download">
           <h2 className="section-title reveal">下载</h2>
-          <p className="download-note">Android 移动端已开启邀请制内测；Windows 桌面端已暂缓开发，团队正评估微信小程序。</p>
+          <p className="download-note">Android 移动端现已开放注册（无需邀请码）；微信小程序正在评估中；Windows 桌面端暂缓开发。</p>
           {platformNotice && <p className="download-platform-notice">{platformNotice}</p>}
           <div className="card-grid">
             {platforms.map((p) => (
@@ -425,7 +426,7 @@ function App() {
           <div className="arch-diagram reveal">
             <div className="arch-node">手机端</div>
             <div className="arch-node">电脑端</div>
-            <div className="arch-node">浏览器</div>
+            <div className="arch-node">微信小程序</div>
             <div className="arch-arrow">↓</div>
           </div>
           <div className="arch-backend">后端（Fastify + SQLite）── DeepSeek API</div>
