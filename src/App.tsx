@@ -97,7 +97,7 @@ const platforms = [
   {
     name: 'Android 移动端',
     desc: '手机端学习搭子，随时复习',
-    status: '内测中 · 已开放注册',
+    status: '邀请制内测中',
     downloadUrl: 'https://huaipet.com/download/huaipet-mobile-release.apk',
     qrCode: androidQrCode,
   },
@@ -144,7 +144,7 @@ const faq = [
   },
   {
     q: '支持哪些平台？',
-    a: 'Android 移动端现已开放注册，符合使用条件的用户可直接创建账号，无需邀请码。有问题欢迎通过抖音 @槐序学长 或 QQ 2014302010 联系我们。',
+    a: 'Android 移动端目前为邀请制内测（面向年满 18 周岁的用户）。想参与内测的话，通过抖音 @槐序学长 或 QQ 2014302010 联系我们获取邀请码。',
   },
   {
     q: '我的数据存在哪里？会交给第三方吗？',
@@ -167,8 +167,8 @@ const faq = [
 const changelog = [
   {
     date: '2026-07-16',
-    title: '开放注册：不再需要邀请码',
-    desc: 'HuaiPet Android 移动端现已开放注册，符合使用条件（年满 18 周岁）的用户可直接创建账号，不再需要邀请码。注册流程也做了简化：两步完成，AI 陪伴授权可在注册时选择，或首次使用 AI 功能时再单独开启（不影响计划、学习、足迹等基础功能）。',
+    title: '注册流程简化 + AI 授权可延后',
+    desc: '注册改为两步完成，出生年月改用滑动选择更省心；AI 陪伴授权不再强制在注册时同意，可在首次使用 AI 功能时再单独开启（不影响计划、学习、足迹等基础功能）。目前仍为邀请制内测。',
   },
   {
     date: '2026-07-15',
@@ -304,7 +304,7 @@ function App() {
 
         <section id="download" className="download">
           <h2 className="section-title reveal">下载</h2>
-          <p className="download-note">Android 移动端现已开放注册（无需邀请码）；微信小程序正在评估中；Windows 桌面端暂缓开发。</p>
+          <p className="download-note">Android 移动端为邀请制内测，通过 抖音 · 槐序学长 或 QQ 2014302010 联系获取邀请码；微信小程序正在评估中；Windows 桌面端暂缓开发。</p>
           {platformNotice && <p className="download-platform-notice">{platformNotice}</p>}
           <div className="card-grid">
             {platforms.map((p) => (
