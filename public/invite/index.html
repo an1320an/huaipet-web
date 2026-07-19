@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>邀请 · 槐序 HuaiPet</title>
-<meta name="description" content="你的朋友邀请你一起用 槐序 HuaiPet 备考。" />
+<title>邀请 · 知潮</title>
+<meta name="description" content="你的朋友邀请你一起用知潮备考。" />
 <style>
   * { box-sizing: border-box; margin: 0; padding: 0; }
   body { font-family: -apple-system, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif; background: linear-gradient(160deg, #eaf4ee 0%, #f4f8f6 100%); color: #1f2d27; min-height: 100vh; display: flex; align-items: center; justify-content: center; padding: 20px; }
@@ -21,8 +21,8 @@
 </head>
 <body>
   <div class="card">
-    <div class="logo">🌱 槐序 HuaiPet</div>
-    <p class="lead">你的朋友邀请你一起用 <b>槐序 HuaiPet</b> 备考——一起备考的 AI 学习工具。</p>
+    <div class="logo">🌱 槐序 · 知潮</div>
+    <p class="lead">你的朋友邀请你一起用 <b>知潮</b> 备考——一起备考的 AI 学习工具。</p>
     <p class="hint" style="margin-top:10px;">🤖 朵朵是 AI 程序，不是真人；本服务仅面向年满 18 周岁用户，AI 生成内容仅供学习参考。</p>
     <div class="code-label">你的邀请码</div>
     <div class="code" id="code">—</div>
@@ -33,7 +33,7 @@
   <script>
     var code = (new URLSearchParams(location.search).get("code") || "").trim();
     document.getElementById("code").textContent = code || "（未提供邀请码，请向邀请人索取）";
-    document.title = code ? ("邀请码 " + code + " · 槐序 HuaiPet") : document.title;
+    document.title = code ? ("邀请码 " + code + " · 知潮") : document.title;
   </script>
 </body>
 </html>

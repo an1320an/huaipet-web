@@ -89,8 +89,8 @@ function detectPlatform() {
 }
 
 const platformNotices: Record<string, string> = {
-  ios: '检测到你可能在用 iOS/iPadOS 设备——HuaiPet 目前只支持 Android，iOS 版本还在开发中，敬请期待。',
-  harmonyos: '检测到你可能在用鸿蒙系统——HuaiPet 目前只支持 Android，鸿蒙原生版本我们还在评估适配方案。',
+  ios: '检测到你可能在用 iOS/iPadOS 设备——知潮目前只支持 Android，iOS 版本还在开发中，敬请期待。',
+  harmonyos: '检测到你可能在用鸿蒙系统——知潮目前只支持 Android，鸿蒙原生版本我们还在评估适配方案。',
 }
 
 const platforms = [
@@ -108,7 +108,7 @@ const platforms = [
 const cocreateRoles = [
   {
     title: '剪辑 / 视频创作',
-    desc: '槐序 HuaiPet 的抖音开发日记需要人帮忙剪素材、把开发过程做成好看的内容，一起把这个项目的故事讲给更多人听。',
+    desc: '槐序工作室的知潮开发日记需要人帮忙剪素材、把开发过程做成好看的内容，一起把这个项目的故事讲给更多人听。',
   },
   {
     title: '插画 / 角色设计',
@@ -120,16 +120,16 @@ const cocreateRoles = [
   },
   {
     title: '宣传 / 拉新',
-    desc: '好产品也需要被更多人看到，需要懂社群运营、擅长宣传推广的人帮忙把 HuaiPet 带给更多医学生和医护人员。',
+    desc: '好产品也需要被更多人看到，需要懂社群运营、擅长宣传推广的人帮忙把知潮带给更多医学生和医护人员。',
   },
 ]
 
 const contributors = [
   {
     name: '知许',
-    title: 'HuaiPet 第一批共创成员',
+    title: '知潮第一批共创成员',
     contribution: '宣传协助、内测反馈',
-    thanks: '感谢知许在 HuaiPet 早期内测阶段参与共创，协助宣传、反馈体验，并和我们一起打磨这个给医学人用的 AI 学习工具。',
+    thanks: '感谢知许在知潮（原 HuaiPet）早期内测阶段参与共创，协助宣传、反馈体验，并和我们一起打磨这个给医学人用的 AI 学习工具。',
   },
 ]
 
@@ -139,7 +139,7 @@ const faq = [
     a: '有。本服务包含 AI 拟人化陪伴功能，按《人工智能拟人化互动服务管理暂行办法》仅面向年满 18 周岁的用户。注册时需填写出生年月用于年龄核验；已注册的老用户在新版客户端中也需要补填。',
   },
   {
-    q: 'HuaiPet 免费吗？',
+    q: '知潮免费吗？',
     a: '目前免费，且不提供任何付费购买功能——App 内的金币只能通过学习、答题、完成任务获得，不能用真实货币购买。如果未来提供自愿支持类功能，我们会另行明确告知，并且不会以"增进与朵朵的情感关系"作为付费卖点。',
   },
   {
@@ -178,12 +178,12 @@ const changelog = [
   {
     date: '2026-07-08',
     title: 'Android 内测开启',
-    desc: 'HuaiPet Android 移动端正式开启邀请制内测，通过抖音 @槐序学长 联系获取邀请码。',
+    desc: '知潮（当时名为 HuaiPet）Android 移动端正式开启邀请制内测，通过抖音 @槐序学长 联系获取邀请码。',
   },
   {
     date: '2026-07-07',
     title: '官网上线',
-    desc: '槐序 HuaiPet 官网正式上线，huaipet.com 可以访问了。',
+    desc: '知潮前身“槐序 HuaiPet”的官网正式上线，huaipet.com 可以访问了。',
   },
   {
     date: '2026-07-06',
@@ -239,7 +239,7 @@ function App() {
     <div className="page">
       <header className="nav">
         <div className="nav-inner">
-          <span className="brand">槐序 HuaiPet</span>
+          <span className="brand">槐序 · 知潮</span>
           <nav>
             <a href="#philosophy">理念</a>
             <a href="#features">功能</a>
@@ -339,7 +339,7 @@ function App() {
         <section id="about" className="about">
           <h2 className="section-title reveal">关于我们</h2>
           <p className="reveal">
-            槐序 HuaiPet 是一个正在开发中的独立项目，目标是做一个长期好用、越用越懂你薄弱点的医学学习工具，
+            知潮（原 HuaiPet）是槐序工作室持续开发的学习工具，目标是长期好用、越用越懂你的薄弱点，
             用轻量的陪伴让漫长的医学备考不那么枯燥。项目由个人开发者持续迭代打造，你可以在抖音
             <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> @槐序学长 </a>
             关注最新进展，或通过邮箱
@@ -352,7 +352,7 @@ function App() {
           <div className="cocreate">
             <h2 className="section-title reveal">招募共创</h2>
             <p className="cocreate-intro">
-              槐序 HuaiPet 目前是一个人在做的独立项目，还没有任何收入——这不是一份工作，是一次"为爱发电"的邀请。
+              知潮目前是槐序工作室主理人独立推进的项目，还没有任何收入——这不是一份工作，是一次"为爱发电"的邀请。
               如果你也觉得"医学备考是场持久战，需要一个长期好用、越用越懂你薄弱点的学习工具"这件事值得做，欢迎一起加入，把它做出来。
             </p>
             <div className="card-grid">
@@ -488,7 +488,7 @@ function App() {
         <p>
           联系邮箱：<a href="mailto:an1320an@gmail.com">an1320an@gmail.com</a>
         </p>
-        <p>槐序 HuaiPet · 敬请期待</p>
+        <p>槐序工作室 · 知潮</p>
         <p className="ai-notice-footer">
           🤖 朵朵是 AI 程序，不是真人。本站与 App 内的 AI 生成内容仅供学习参考，不构成医疗建议。
         </p>
