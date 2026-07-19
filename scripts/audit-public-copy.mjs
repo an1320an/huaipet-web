@@ -27,6 +27,11 @@ const checks = [
   ["公开文案不得笼统承诺删除全部个人数据", !Object.values(sources).some((text) => text.includes("删除你的全部个人数据"))],
   ["政策不得把全部服务18+误写成国家一刀切要求", !Object.values(sources).some((text) => text.includes("按国家规定仅向年满 18"))],
   ["免责声明写明本地计算边界", sources["public/legal/disclaimer.html"].includes("设备本地、确定性公式工具")],
+  ["危机独立记录不得再宣称保存200字原话", !Object.values(sources).some((text) => text.includes("原话摘要（最长 200") || text.includes("含原话摘要"))],
+  ["隐私政策写明危机元数据不关联账号", sources["public/legal/privacy.html"].includes("不保存账号、用户 ID、昵称、邮箱、联系方式或输入原话/摘要")],
+  ["隐私政策如实说明原输入仍属聊天历史", sources["public/legal/privacy.html"].includes("仍会按第 1、5、8、9 章所述保存在账号聊天记录中")],
+  ["危机匿名元数据写明180天清理", sources["public/legal/privacy.html"].includes("超过 180 天") && sources["public/legal/terms.html"].includes("180 天后自动清理")],
+  ["公开文案不得承诺实时人工跟进", !Object.values(sources).some((text) => text.includes("并由人工跟进") || text.includes("用于人工关怀跟进"))],
 ];
 
 const failed = checks.filter(([, ok]) => !ok);
