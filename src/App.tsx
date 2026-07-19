@@ -96,13 +96,14 @@ const platformNotices: Record<string, string> = {
 const platforms = [
   {
     name: 'Android 移动端',
-    desc: '手机端学习搭子，随时复习',
-    status: '邀请制内测中',
-    downloadUrl: 'https://huaipet.com/download/huaipet-mobile-release.apk',
+    desc: '知潮 1.2.0 全新安装包',
+    status: '内测迁移中',
+    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk',
+    downloadLabel: '下载知潮新包',
     qrCode: androidQrCode,
   },
-  { name: '微信小程序', desc: '随手打开、无需下载（正在评估）', status: '评估中', downloadUrl: null },
-  { name: 'Windows 桌面端', desc: '透明置顶桌面悬浮窗，学习提醒与轻量互动', status: '暂缓开发', downloadUrl: null },
+  { name: '微信小程序', desc: '随手打开、无需下载（正在评估）', status: '评估中', downloadUrl: null, downloadLabel: null, qrCode: null },
+  { name: 'Windows 桌面端', desc: '透明置顶桌面悬浮窗，学习提醒与轻量互动', status: '暂缓开发', downloadUrl: null, downloadLabel: null, qrCode: null },
 ]
 
 const cocreateRoles = [
@@ -304,6 +305,15 @@ function App() {
 
         <section id="download" className="download">
           <h2 className="section-title reveal">下载</h2>
+          <div className="download-migration reveal">
+            <h3>旧版用户迁移说明</h3>
+            <p>这次知潮更换了 Android 安装包身份，因此会作为一个新 App 安装，不会覆盖手机里的旧版 HuaiPet。</p>
+            <ol>
+              <li>下载安装知潮新包。</li>
+              <li>使用原来的账号登录，云端学习记录会继续保留。</li>
+              <li>确认知潮内的数据和功能正常后，再卸载旧版 HuaiPet。</li>
+            </ol>
+          </div>
           <p className="download-note">Android 移动端为邀请制内测，通过 抖音 · 槐序学长 或 QQ 2014302010 联系获取邀请码；微信小程序正在评估中；Windows 桌面端暂缓开发。</p>
           {platformNotice && <p className="download-platform-notice">{platformNotice}</p>}
           <div className="card-grid">
@@ -314,7 +324,7 @@ function App() {
                 <span className="platform-status">{p.status}</span>
                 {p.downloadUrl && (
                   <a className="platform-download" href={p.downloadUrl}>
-                    下载安装包
+                    {p.downloadLabel}
                   </a>
                 )}
                 {p.qrCode && (
