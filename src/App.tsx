@@ -11,6 +11,9 @@ import careerIcon from '/features/feature-career.webp'
 import cloudSyncIcon from '/features/feature-cloud-sync.webp'
 import androidQrCode from '/qr-android-download.svg'
 
+const DOUYIN_URL = 'https://v.douyin.com/Tmm7e_p2rMM/'
+const DOUYIN_NAME = '槐序工作室'
+
 // 合规改造 2026-07-15：原来这四条把"让用户感觉朵朵在陪我，而不是在用一个工具"当卖点，
 // 那是把"模糊人机边界、培养情感依赖"写成产品纲领对外宣传，直接撞《人工智能拟人化互动
 // 服务管理暂行办法》第八条（不得诱导情感依赖）与第十八条（须显著标识非真人）；
@@ -96,8 +99,8 @@ const platformNotices: Record<string, string> = {
 const platforms = [
   {
     name: 'Android 移动端',
-    desc: '知潮 1.2.0 全新安装包',
-    status: '内测迁移中',
+    desc: '知潮 1.3.0 Android 安装包',
+    status: '内测更新',
     downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk',
     downloadLabel: '下载知潮新包',
     qrCode: androidQrCode,
@@ -145,7 +148,7 @@ const faq = [
   },
   {
     q: '支持哪些平台？',
-    a: 'Android 移动端目前为邀请制内测（面向年满 18 周岁的用户）。想参与内测的话，通过抖音 @槐序学长 或 QQ 2014302010 联系我们获取邀请码。',
+    a: `Android 移动端目前为邀请制内测（面向年满 18 周岁的用户）。想参与内测的话，通过抖音 @${DOUYIN_NAME} 或 QQ 2014302010 联系我们获取邀请码。`,
   },
   {
     q: '我的数据存在哪里？会交给第三方吗？',
@@ -167,6 +170,11 @@ const faq = [
 
 const changelog = [
   {
+    date: '2026-07-20',
+    title: '知潮 1.3.0：上传恢复、规则聊天与内容治理更新',
+    desc: '修复共创题库 TXT、DOCX、PDF 文件在手机端未真正发出的问题；保留朵朵文字聊天并切换为审核文案、关键词规则、静态知识与学习数据组合；加入受控多轮上下文、足迹补充线程、装扮与提醒可靠性改进，以及可随时撤回的后台静态内容改进授权。',
+  },
+  {
     date: '2026-07-19',
     title: '朵朵切换为审核文案规则聊天',
     desc: '聊天界面与历史记录继续保留，回复改由服务端审核文案库、关键词规则和学习数据组合，不实时调用云端大模型。经用户单独授权的脱敏缺口可用于后台改进静态内容；以后如具备合规条件，可受控切换回复引擎。',
@@ -184,7 +192,7 @@ const changelog = [
   {
     date: '2026-07-08',
     title: 'Android 内测开启',
-    desc: '知潮（当时名为 HuaiPet）Android 移动端正式开启邀请制内测，通过抖音 @槐序学长 联系获取邀请码。',
+    desc: `知潮（当时名为 HuaiPet）Android 移动端正式开启邀请制内测，通过抖音 @${DOUYIN_NAME} 联系获取邀请码。`,
   },
   {
     date: '2026-07-07',
@@ -318,7 +326,7 @@ function App() {
               <li>确认知潮内的数据和功能正常后，再卸载旧版 HuaiPet。</li>
             </ol>
           </div>
-          <p className="download-note">Android 移动端为邀请制内测，通过 抖音 · 槐序学长 或 QQ 2014302010 联系获取邀请码；微信小程序正在评估中；Windows 桌面端暂缓开发。</p>
+          <p className="download-note">Android 移动端为邀请制内测，通过 抖音 · {DOUYIN_NAME} 或 QQ 2014302010 联系获取邀请码；微信小程序正在评估中；Windows 桌面端暂缓开发。</p>
           {platformNotice && <p className="download-platform-notice">{platformNotice}</p>}
           <div className="card-grid">
             {platforms.map((p) => (
@@ -345,7 +353,7 @@ function App() {
           </div>
           <p className="download-note">
             Android 移动端当前为邀请制内测。年满 18 周岁的用户可通过
-            <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> 抖音 · 槐序学长 </a>
+            <a href={DOUYIN_URL} target="_blank" rel="noopener noreferrer"> 抖音 · {DOUYIN_NAME} </a>
             或 QQ 2014302010 联系获取邀请码；已有账号可直接登录。
           </p>
         </section>
@@ -354,8 +362,8 @@ function App() {
           <h2 className="section-title reveal">关于我们</h2>
           <p className="reveal">
             知潮（原 HuaiPet）是槐序工作室持续开发的学习工具，目标是长期好用、越用越懂你的薄弱点，
-            用轻量的陪伴让漫长的医学备考不那么枯燥。项目由个人开发者持续迭代打造，你可以在抖音
-            <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> @槐序学长 </a>
+            用轻量的陪伴让漫长的医学备考不那么枯燥。项目由旬阳市槐序软件工作室（个体工商户）持续迭代打造，你可以在抖音
+            <a href={DOUYIN_URL} target="_blank" rel="noopener noreferrer"> @{DOUYIN_NAME} </a>
             关注最新进展，或通过邮箱
             <a href="mailto:an1320an@gmail.com"> an1320an@gmail.com </a>
             联系我们、提出建议。
@@ -382,7 +390,7 @@ function App() {
             </p>
             <p className="cocreate-contact">
               有兴趣的话，通过
-              <a href="https://v.douyin.com/4vpWBY5MsL0/" target="_blank" rel="noopener noreferrer"> 抖音 · 槐序学长 </a>
+              <a href={DOUYIN_URL} target="_blank" rel="noopener noreferrer"> 抖音 · {DOUYIN_NAME} </a>
               、QQ 2014302010 或
               <a href="mailto:an1320an@gmail.com"> 邮箱 </a>
               找我们聊聊。
@@ -473,7 +481,7 @@ function App() {
       <footer className="footer">
         <a
           className="social-link"
-          href="https://v.douyin.com/4vpWBY5MsL0/"
+          href={DOUYIN_URL}
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -483,7 +491,7 @@ function App() {
               d="M16.6 5.82c-.9-.98-1.4-2.26-1.4-3.6h-3.28v13.9a3.16 3.16 0 0 1-5.6 2 3.16 3.16 0 0 1 3.34-5.05v-3.34a6.47 6.47 0 0 0-5.4 10.86 6.47 6.47 0 0 0 11.04-4.58V9.01a8.16 8.16 0 0 0 4.7 1.5V7.24a4.85 4.85 0 0 1-3.4-1.42z"
             />
           </svg>
-          抖音：槐序学长
+          抖音：{DOUYIN_NAME}
         </a>
         <a
           className="social-link"
@@ -502,7 +510,7 @@ function App() {
         <p>
           联系邮箱：<a href="mailto:an1320an@gmail.com">an1320an@gmail.com</a>
         </p>
-        <p>槐序工作室 · 知潮</p>
+        <p>旬阳市槐序软件工作室（个体工商户） · 知潮</p>
         <p className="ai-notice-footer">
           📚 朵朵当前使用审核文案库与规则自动回应，不实时调用云端大模型，也不是真人。经单独授权的脱敏缺口可能用于后台改进静态内容。内容仅供学习辅助，不构成医疗建议。
         </p>
