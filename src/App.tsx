@@ -99,7 +99,7 @@ const platformNotices: Record<string, string> = {
 const platforms = [
   {
     name: 'Android 移动端',
-    desc: '知潮 1.3.0 Android 安装包',
+    desc: '知潮 1.3.1 Android 安装包',
     status: '内测更新',
     downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk',
     downloadLabel: '下载知潮新包',
@@ -179,7 +179,7 @@ const faq = [
 const changelog = [
   {
     date: '2026-07-20',
-    title: '知潮 1.3.0：邀请内测 AI、上传恢复与内容治理更新',
+    title: '知潮 1.3.1：公共内容共创授权与自动复核更新',
     desc: '向邀请码注册的内测用户开放 AI 对话、AI 出题与知识树能力；加入请求安全闸门、AI 来源标识、使用限制与可一键切回的离线规则引擎。一项可撤回的内测 AI 数据授权同时覆盖本次生成和经安全筛选、脱敏、去身份化后的短表达离线资源改进；公共内容共创另行授权，上传题库、个人知识树/知识卡片和公共题目只在明确同意后开放，合格内容经多轮自动复核后进入公共池。同步修复共创题库 TXT、DOCX、PDF 文件在手机端未真正发出的问题，并改进多轮上下文、足迹线程、装扮与提醒可靠性。',
   },
   {
