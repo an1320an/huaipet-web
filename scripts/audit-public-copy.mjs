@@ -4,6 +4,7 @@ import path from "node:path";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sources = Object.fromEntries(await Promise.all([
+  "index.html",
   "src/App.tsx",
   "public/legal/privacy.html",
   "public/legal/terms.html",
@@ -15,11 +16,12 @@ const checks = [
   ["官网如实写明邀请制", sources["src/App.tsx"].includes("Android 移动端当前为邀请制内测")],
   ["官网不得误写开放注册", !sources["src/App.tsx"].includes("现已开放注册")],
   ["官网不得误写无需邀请码", !sources["src/App.tsx"].includes("无需邀请码")],
-  ["隐私政策如实写明服务端规则", sources["public/legal/privacy.html"].includes("服务端审核文案库")],
-  ["隐私政策写明规则回复不实时调用模型", sources["public/legal/privacy.html"].includes("不把完整对话交给云端大模型实时回答")],
-  ["隐私政策写明脱敏聚合缺口的授权用途", sources["public/legal/privacy.html"].includes("按相同表达聚合达到门槛") && sources["public/legal/privacy.html"].includes("AI 数据授权")],
-  ["隐私政策写明后台接收方与数据范围", sources["public/legal/privacy.html"].includes("接收方为第三方大模型服务商 DeepSeek") && sources["public/legal/privacy.html"].includes("最多 160 字短样例")],
-  ["隐私政策写明撤回后的新输入边界", sources["public/legal/privacy.html"].includes("关闭后，新输入不再计入第三方模型处理")],
+  ["官网如实写明邀请内测 AI", sources["src/App.tsx"].includes("邀请内测用户可在一项知情授权下使用 DeepSeek")],
+  ["隐私政策写明单一授权的两项用途", sources["public/legal/privacy.html"].includes("内测 AI 数据授权是一项完整的可选 AI 服务授权") && sources["public/legal/privacy.html"].includes("两类处理同时生效")],
+  ["隐私政策写明 DeepSeek 与服务商备案信息", sources["public/legal/privacy.html"].includes("Beijing-DeepseekChat-202404280016") && sources["public/legal/privacy.html"].includes("网信算备110108970550101240011号")],
+  ["隐私政策不把服务商备案冒充应用备案", sources["public/legal/privacy.html"].includes("不等于知潮已完成其作为下游应用可能需要的全部登记、评估或备案")],
+  ["隐私政策写明离线样本隐私边界", sources["public/legal/privacy.html"].includes("不附带用户 ID、邮箱、昵称和模型回复")],
+  ["隐私政策写明撤回同时停止两项处理", sources["public/legal/privacy.html"].includes("新的实时 AI 请求不再发送给 DeepSeek") && sources["public/legal/privacy.html"].includes("新的输入也不再进入脱敏离线资源改进流程")],
   ["隐私政策写明临床工具输入不上传", sources["public/legal/privacy.html"].includes("临床工具输入") && sources["public/legal/privacy.html"].includes("不会把这些具体输入上传")],
   ["隐私政策覆盖精确闹钟权限", sources["public/legal/privacy.html"].includes("USE_EXACT_ALARM")],
   ["隐私政策覆盖电池优化权限", sources["public/legal/privacy.html"].includes("REQUEST_IGNORE_BATTERY_OPTIMIZATIONS")],
@@ -39,6 +41,7 @@ const checks = [
   ["危机匿名元数据写明180天清理", sources["public/legal/privacy.html"].includes("超过 180 天") && sources["public/legal/terms.html"].includes("180 天后自动清理")],
   ["公开文案不得承诺实时人工跟进", !Object.values(sources).some((text) => text.includes("并由人工跟进") || text.includes("用于人工关怀跟进"))],
   ["公开文案不得继续宣称第三方模型全关闭", !Object.values(sources).some((text) => text.includes("当前第三方模型功能已关闭") || text.includes("当前运行状态：未启用第三方大模型处理"))],
+  ["公开文案不得继续宣称当前不实时调用模型", !Object.values(sources).some((text) => text.includes("当前由审核文案库和规则自动回应，不实时调用云端大模型") || text.includes("当前使用审核文案库与规则自动回应，不实时调用云端大模型"))],
   ["官网与协议统一登记运营主体", ["src/App.tsx", "public/legal/privacy.html", "public/legal/terms.html", "public/legal/complaints.html"].every((name) => sources[name].includes("旬阳市槐序软件工作室"))],
   ["官网与协议统一抖音账号", ["src/App.tsx", "public/legal/privacy.html", "public/legal/terms.html", "public/legal/complaints.html"].every((name) => sources[name].includes("槐序工作室"))],
   ["公开源码不再保留旧抖音账号名或旧短链", !Object.values(sources).some((text) => /槐序学长|4vpWBY5MsL0|XTF17fnkqNE|N4weK8sUDmM/.test(text))],
