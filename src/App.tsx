@@ -99,7 +99,7 @@ const platformNotices: Record<string, string> = {
 const platforms = [
   {
     name: 'Android 移动端',
-    desc: '知潮 1.3.5 Android 安装包',
+    desc: '知潮 1.3.6 Android 安装包',
     status: '内测更新',
     downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk',
     downloadLabel: '下载知潮新包',
@@ -177,6 +177,11 @@ const faq = [
 ]
 
 const changelog = [
+  {
+    date: '2026-07-21',
+    title: '知潮 1.3.6：消息长按、提醒卡与键盘体验更新',
+    desc: '聊天消息改为长按操作：朵朵回复可复制、收藏到长期记忆、换种回答，学习内容还能加入复习提醒；自己的消息可复制、重新编辑或确认后再次发送。移除每条回复下方常驻的快捷按钮，让聊天流更简洁；低置信提醒卡固定为主确认独占一行、改时间与不用了位于第二行，避免窄屏标签溢出；继续减少键盘弹收时列表滚动与底栏动画叠加造成的卡顿。',
+  },
   {
     date: '2026-07-21',
     title: '知潮 1.3.5：聊天输入、提醒卡与文字答题修复',
