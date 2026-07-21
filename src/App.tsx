@@ -99,9 +99,9 @@ const platformNotices: Record<string, string> = {
 const platforms = [
   {
     name: 'Android 移动端',
-    desc: '知潮 1.3.6 Android 安装包',
+    desc: '知潮 1.3.7 Android 安装包',
     status: '内测更新',
-    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk',
+    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk?v=1.3.7',
     downloadLabel: '下载知潮新包',
     qrCode: androidQrCode,
   },
@@ -177,6 +177,11 @@ const faq = [
 ]
 
 const changelog = [
+  {
+    date: '2026-07-21',
+    title: '知潮 1.3.7：换装提示与安装包发布链路修复',
+    desc: '换上朵朵装扮前会明确提示桌面图标也将同步变化，并说明部分手机可能短暂返回桌面或重新打开，避免误以为应用卡死。修复官网固定下载文件可能被旧版自动同步任务覆盖的问题；更新发布改为先完成安装包版本、签名与哈希核验及公网回读，再展示新版和发送通知。',
+  },
   {
     date: '2026-07-21',
     title: '知潮 1.3.6：消息长按、提醒卡与键盘体验更新',
