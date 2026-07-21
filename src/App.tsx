@@ -99,9 +99,9 @@ const platformNotices: Record<string, string> = {
 const platforms = [
   {
     name: 'Android 移动端',
-    desc: '知潮 1.3.7 Android 安装包',
+    desc: '知潮 1.3.8 Android 安装包',
     status: '内测更新',
-    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk?v=1.3.7',
+    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk?v=1.3.8',
     downloadLabel: '下载知潮新包',
     qrCode: androidQrCode,
   },
@@ -177,6 +177,11 @@ const faq = [
 ]
 
 const changelog = [
+  {
+    date: '2026-07-21',
+    title: '知潮 1.3.8：聊天键盘、互动题卡与长解析体验更新',
+    desc: '修复部分 Android 手机上聊天输入框被键盘遮挡、弹收割裂或掉帧的问题，并统一状态栏背景。聊天与功能中心的练习题支持可点击选项、单选和多选判题、彩色结果与解析卡片；长题目和长解析现在可以完整滚动查看。聊天可按高血压、糖尿病等知识范围以及 A1、A2、B、X、判断题等题型抽题，优先复用现有题库，库存不足时仅在已授权的内测 AI 模式下生成并明确标注来源。',
+  },
   {
     date: '2026-07-21',
     title: '知潮 1.3.7：换装提示与安装包发布链路修复',
