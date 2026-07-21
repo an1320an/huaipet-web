@@ -6,6 +6,7 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const sources = Object.fromEntries(await Promise.all([
   "index.html",
   "src/App.tsx",
+  "public/invite/index.html",
   "public/legal/privacy.html",
   "public/legal/terms.html",
   "public/legal/disclaimer.html",
@@ -17,6 +18,9 @@ const checks = [
   ["官网不得误写开放注册", !sources["src/App.tsx"].includes("现已开放注册")],
   ["官网不得误写无需邀请码", !sources["src/App.tsx"].includes("无需邀请码")],
   ["官网如实写明邀请内测 AI", sources["src/App.tsx"].includes("邀请内测用户可在一项知情授权下使用 DeepSeek")],
+  ["邀请码页如实写明规则与云端 AI 双引擎", sources["public/invite/index.html"].includes("规则与云端 AI 双引擎") && sources["public/invite/index.html"].includes("DeepSeek")],
+  ["邀请码页不得继续宣称不调用云端模型", !sources["public/invite/index.html"].includes("不调用云端大模型") && !sources["public/invite/index.html"].includes("不实时调用云端大模型")],
+  ["邀请码页提供复制按钮与剪贴板回退", sources["public/invite/index.html"].includes("id=\"copy-code\"") && sources["public/invite/index.html"].includes("navigator.clipboard.writeText") && sources["public/invite/index.html"].includes("document.execCommand(\"copy\")")],
   ["隐私政策写明单一授权的两项用途", sources["public/legal/privacy.html"].includes("内测 AI 数据授权是一项完整的可选 AI 服务授权") && sources["public/legal/privacy.html"].includes("两类处理同时生效")],
   ["隐私政策写明 DeepSeek 与服务商备案信息", sources["public/legal/privacy.html"].includes("Beijing-DeepseekChat-202404280016") && sources["public/legal/privacy.html"].includes("网信算备110108970550101240011号")],
   ["隐私政策不把服务商备案冒充应用备案", sources["public/legal/privacy.html"].includes("不等于知潮已完成其作为下游应用可能需要的全部登记、评估或备案")],
