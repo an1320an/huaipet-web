@@ -99,9 +99,9 @@ const platformNotices: Record<string, string> = {
 const platforms = [
   {
     name: 'Android 移动端',
-    desc: '知潮 1.3.9 Android 安装包',
+    desc: '知潮 1.4.0 Android 安装包',
     status: '内测更新',
-    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk?v=1.3.9',
+    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk?v=1.4.0',
     downloadLabel: '下载知潮新包',
     qrCode: androidQrCode,
   },
@@ -177,6 +177,11 @@ const faq = [
 ]
 
 const changelog = [
+  {
+    date: '2026-07-22',
+    title: '知潮 1.4.0：成长成就、平板适配与学习体验升级',
+    desc: '重构朵朵成长、打工学习时长与金币收支节奏，新增 57 项成长成就、五档稀有度、成就图鉴和头像下方荣誉角，已佩戴成就可在首页展示。优化学习页信息分层、遗忘曲线说明、通用倒计时与纪念日能力，并针对手机和平板横竖屏调整字号、间距和内容宽度。',
+  },
   {
     date: '2026-07-22',
     title: '知潮 1.3.9：知识树巩固、遗忘曲线与错题提醒更新',
