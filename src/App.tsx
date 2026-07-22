@@ -99,9 +99,9 @@ const platformNotices: Record<string, string> = {
 const platforms = [
   {
     name: 'Android 移动端',
-    desc: '知潮 1.3.8 Android 安装包',
+    desc: '知潮 1.3.9 Android 安装包',
     status: '内测更新',
-    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk?v=1.3.8',
+    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk?v=1.3.9',
     downloadLabel: '下载知潮新包',
     qrCode: androidQrCode,
   },
@@ -177,6 +177,11 @@ const faq = [
 ]
 
 const changelog = [
+  {
+    date: '2026-07-22',
+    title: '知潮 1.3.9：知识树巩固、遗忘曲线与错题提醒更新',
+    desc: '修复计划页“知识树待巩固”点击后无法进入的问题，现在可以查看待巩固节点并直达对应知识点，再次练习全对后自动移出。学习页与搭子首页明确展示“遗忘曲线复习”入口、到期与掌握状态，并说明“记住了、模糊、没记住”会调整下次复习时间。恢复搭子首页真实错题提醒，有可用错题时会展示题干、正确答案和知识点。',
+  },
   {
     date: '2026-07-21',
     title: '知潮 1.3.8：聊天键盘、互动题卡与长解析体验更新',
