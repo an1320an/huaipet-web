@@ -21,7 +21,7 @@ const checks = [
   ["邀请码页如实写明规则与云端 AI 双引擎", sources["public/invite/index.html"].includes("规则与云端 AI 双引擎") && sources["public/invite/index.html"].includes("DeepSeek")],
   ["邀请码页不得继续宣称不调用云端模型", !sources["public/invite/index.html"].includes("不调用云端大模型") && !sources["public/invite/index.html"].includes("不实时调用云端大模型")],
   ["邀请码页提供复制按钮与剪贴板回退", sources["public/invite/index.html"].includes("id=\"copy-code\"") && sources["public/invite/index.html"].includes("navigator.clipboard.writeText") && sources["public/invite/index.html"].includes("document.execCommand(\"copy\")")],
-  ["隐私政策写明单一授权的两项用途", sources["public/legal/privacy.html"].includes("内测 AI 数据授权是一项完整的可选 AI 服务授权") && sources["public/legal/privacy.html"].includes("两类处理同时生效")],
+  ["隐私政策写明单一授权覆盖实时AI、记忆整理与离线改进", sources["public/legal/privacy.html"].includes("内测 AI 数据授权是一项完整的可选 AI 服务授权") && sources["public/legal/privacy.html"].includes("提取长期记忆或待确认候选") && sources["public/legal/privacy.html"].includes("用于发现离线资源库未覆盖的场景")],
   ["隐私政策写明 DeepSeek 与服务商备案信息", sources["public/legal/privacy.html"].includes("Beijing-DeepseekChat-202404280016") && sources["public/legal/privacy.html"].includes("网信算备110108970550101240011号")],
   ["隐私政策不把服务商备案冒充应用备案", sources["public/legal/privacy.html"].includes("不等于知潮已完成其作为下游应用可能需要的全部登记、评估或备案")],
   ["隐私政策写明离线样本隐私边界", sources["public/legal/privacy.html"].includes("不附带用户 ID、邮箱、昵称和模型回复")],
@@ -52,7 +52,7 @@ const checks = [
   ["官网与协议统一登记运营主体", ["src/App.tsx", "public/legal/privacy.html", "public/legal/terms.html", "public/legal/complaints.html"].every((name) => sources[name].includes("旬阳市槐序软件工作室"))],
   ["官网与协议统一抖音账号", ["src/App.tsx", "public/legal/privacy.html", "public/legal/terms.html", "public/legal/complaints.html"].every((name) => sources[name].includes("槐序工作室"))],
   ["公开源码不再保留旧抖音账号名或旧短链", !Object.values(sources).some((text) => /槐序学长|4vpWBY5MsL0|XTF17fnkqNE|N4weK8sUDmM/.test(text))],
-  ["官网发布信息统一为 1.5.2", sources["src/App.tsx"].includes("知潮 1.5.2 Android 安装包") && sources["public/invite/index.html"].includes("zhichao-mobile-release.apk?v=1.5.2")],
+  ["官网发布信息统一为 1.6.0", sources["src/App.tsx"].includes("知潮 1.6.0 Android 安装包") && sources["public/invite/index.html"].includes("zhichao-mobile-release.apk?v=1.6.0")],
   ["官网提供忘记密码双通道说明", sources["src/App.tsx"].includes("忘记密码怎么办？") && sources["src/App.tsx"].includes("只提供注册邮箱")],
   ["记账政策写明周期复盘与金额隐私开关", sources["public/legal/privacy.html"].includes("日、周、月、季度、半年和年度复盘") && sources["public/legal/privacy.html"].includes("显示具体金额") && sources["public/legal/terms.html"].includes("计划提醒默认不展示具体金额")],
 ];
