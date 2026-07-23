@@ -44,6 +44,8 @@ const features = [
   { icon: examIcon, title: '考试与题库系统', desc: '预置题库、错题本、三种学习模式与静态解析，供日常练习（以官方教材与考试大纲为准）' },
   { icon: forgettingCurveIcon, title: '遗忘曲线复习', desc: '1h→1d→2d→4d→7d→15d→30d，科学安排复习节奏' },
   { icon: careerIcon, title: '职业成长路线', desc: '医学生、医生、护士、药师，等级阈值触发晋升与徽章' },
+  { icon: examIcon, title: '随手记账与周期复盘', desc: '支持手动、聊天草稿与可选截图 OCR 识别；确认后才入账，并提供日、周、月等周期复盘' },
+  { icon: petGrowthIcon, title: '悬浮朵朵快捷入口', desc: '跟随已穿套装显示，支持自定义四个快捷操作与 5/10/15 秒自动贴边；截图识别默认关闭、按需授权' },
   { icon: cloudSyncIcon, title: '云端数据同步', desc: '账号、学习记录与聊天记忆存在云端，换设备也能同步（当前提供 Android 客户端）' },
 ]
 
@@ -56,6 +58,8 @@ const roadmap = [
       '考试与题库系统（预置题库、静态解析、错题本、三种学习模式）',
       '遗忘曲线复习（1h→1d→2d→4d→7d→15d→30d）',
       '职业成长路线（医学生→医生/护士/药师，职称阶梯）',
+      '随手记账（手动、聊天确认草稿、可选截图 OCR 与周期复盘）',
+      '悬浮朵朵（套装联动、自定义快捷操作与自动贴边）',
       '云端账号与数据同步（当前提供 Android 客户端）',
       '安全与健康使用保护（18+ 门槛、回复来源标识、使用时长提醒、危机干预、数据导出与删除）',
     ],
@@ -388,14 +392,16 @@ function App() {
 
         <section id="download" className="download">
           <h2 className="section-title reveal">下载</h2>
-          <div className="download-migration reveal">
-            <h3>旧版用户迁移说明</h3>
-            <p>这次知潮更换了 Android 安装包身份，因此会作为一个新 App 安装，不会覆盖手机里的旧版 HuaiPet。</p>
-            <ol>
-              <li>下载安装知潮新包。</li>
-              <li>使用原来的账号登录，云端学习记录会继续保留。</li>
-              <li>确认知潮内的数据和功能正常后，再卸载旧版 HuaiPet。</li>
-            </ol>
+          <div className="download-migration download-current reveal">
+            <h3>当前邀请内测版</h3>
+            <p>下载安装后，已有知潮账号可直接登录并继续使用云端数据；新用户请先向邀请人或槐序学长工作室获取邀请码。</p>
+            <div className="release-badges" aria-label="当前版本能力">
+              <span>Android</span>
+              <span>邀请内测</span>
+              <span>云端同步</span>
+              <span>规则与 AI 双引擎</span>
+            </div>
+            <p className="release-privacy">截图 OCR 记账默认关闭，只有你主动授权并点击识别后才会处理截图；识别结果会先成为可修改草稿，不会自动入账。</p>
           </div>
           <p className="download-note">Android 移动端为邀请制内测，通过 抖音 · {DOUYIN_NAME} 或 QQ 2014302010 联系获取邀请码；微信小程序正在评估中；Windows 桌面端暂缓开发。</p>
           {platformNotice && <p className="download-platform-notice">{platformNotice}</p>}
@@ -432,7 +438,7 @@ function App() {
         <section id="about" className="about">
           <h2 className="section-title reveal">关于我们</h2>
           <p className="reveal">
-            知潮（原 HuaiPet）是槐序学长工作室持续开发的学习工具，目标是长期好用、越用越懂你的薄弱点，
+            知潮是槐序学长工作室持续开发的学习工具，目标是长期好用、越用越懂你的薄弱点，
             用轻量的陪伴让漫长的医学备考不那么枯燥。项目由旬阳市槐序软件工作室（个体工商户）持续迭代打造，你可以在抖音
             <a href={DOUYIN_URL} target="_blank" rel="noopener noreferrer"> @{DOUYIN_NAME} </a>
             关注最新进展，或通过邮箱
