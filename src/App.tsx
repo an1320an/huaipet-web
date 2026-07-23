@@ -11,8 +11,8 @@ import careerIcon from '/features/feature-career.webp'
 import cloudSyncIcon from '/features/feature-cloud-sync.webp'
 import androidQrCode from '/qr-android-download.svg'
 
-const DOUYIN_URL = 'https://v.douyin.com/Tmm7e_p2rMM/'
-const DOUYIN_NAME = '槐序工作室'
+const DOUYIN_URL = 'https://v.douyin.com/C8lWv7zLhz8/'
+const DOUYIN_NAME = '槐序学长工作室'
 
 // 合规改造 2026-07-15：原来这四条把"让用户感觉朵朵在陪我，而不是在用一个工具"当卖点，
 // 那是把"模糊人机边界、培养情感依赖"写成产品纲领对外宣传，直接撞《人工智能拟人化互动
@@ -112,7 +112,7 @@ const platforms = [
 const cocreateRoles = [
   {
     title: '剪辑 / 视频创作',
-    desc: '槐序工作室的知潮开发日记需要人帮忙剪素材、把开发过程做成好看的内容，一起把这个项目的故事讲给更多人听。',
+    desc: '槐序学长工作室的知潮开发日记需要人帮忙剪素材、把开发过程做成好看的内容，一起把这个项目的故事讲给更多人听。',
   },
   {
     title: '插画 / 角色设计',
@@ -432,7 +432,7 @@ function App() {
         <section id="about" className="about">
           <h2 className="section-title reveal">关于我们</h2>
           <p className="reveal">
-            知潮（原 HuaiPet）是槐序工作室持续开发的学习工具，目标是长期好用、越用越懂你的薄弱点，
+            知潮（原 HuaiPet）是槐序学长工作室持续开发的学习工具，目标是长期好用、越用越懂你的薄弱点，
             用轻量的陪伴让漫长的医学备考不那么枯燥。项目由旬阳市槐序软件工作室（个体工商户）持续迭代打造，你可以在抖音
             <a href={DOUYIN_URL} target="_blank" rel="noopener noreferrer"> @{DOUYIN_NAME} </a>
             关注最新进展，或通过邮箱
@@ -445,7 +445,7 @@ function App() {
           <div className="cocreate">
             <h2 className="section-title reveal">招募共创</h2>
             <p className="cocreate-intro">
-              知潮目前是槐序工作室主理人独立推进的项目，还没有任何收入——这不是一份工作，是一次"为爱发电"的邀请。
+              知潮目前是槐序学长工作室主理人独立推进的项目，还没有任何收入——这不是一份工作，是一次"为爱发电"的邀请。
               如果你也觉得"医学备考是场持久战，需要一个长期好用、越用越懂你薄弱点的学习工具"这件事值得做，欢迎一起加入，把它做出来。
             </p>
             <div className="card-grid">
