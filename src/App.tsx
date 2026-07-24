@@ -103,9 +103,9 @@ const platformNotices: Record<string, string> = {
 const platforms = [
   {
     name: 'Android 移动端',
-    desc: '知潮 1.6.6 Android 安装包',
-    status: '内测更新',
-    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk?v=1.6.6',
+    desc: '知潮 1.8.0 Android 安装包',
+    status: '大版本更新',
+    downloadUrl: 'https://huaipet.com/download/zhichao-mobile-release.apk?v=1.8.0',
     downloadLabel: '下载知潮新包',
     qrCode: androidQrCode,
   },
@@ -189,6 +189,11 @@ const faq = [
 ]
 
 const changelog = [
+  {
+    date: '2026-07-24',
+    title: '知潮 1.8.0：朵朵天气、功能引导与足迹体验升级',
+    desc: '新增版本化新功能引导，新注册、升级、重装登录或切换账号时会介绍本次重点能力，设置中也可随时重看。朵朵天气支持当前天气、未来 24 小时和 7 天预报，天气设置独立管理；聊天询问天气时可直接引用已设置城市的数据。悬浮朵朵按模块展示真实的屏幕节律、知识闪卡和随机陪伴频次。足迹新增用户与朵朵身份头像、回应装扮快照、学习回顾长文自动换行，并重做卡片化记录编辑器。',
+  },
   {
     date: '2026-07-23',
     title: '知潮 1.6.6：截图记账入口与装扮联动更新',
